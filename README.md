@@ -1,5 +1,5 @@
 # Binar Academy Platinum Challenge
 
-This project was built by FER Student Wave-1
+This project was built by BER Student Wave-2
 
-## Ini adalah parent dummy
+## Ini adalah child-salsa
