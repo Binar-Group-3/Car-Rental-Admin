@@ -6,7 +6,7 @@ class Card extends Component {
     render() { 
         return ( 
         <div>
-            <h1>Ini komponen card</h1>
+            <h1>Ini komponen card milikku</h1>
         </div> );
     }
 }
