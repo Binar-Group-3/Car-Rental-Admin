@@ -7,6 +7,7 @@ class Table extends Component {
     return (
       <div>
         <h1>Komponen Table</h1>
+        <h2>Baris kedua</h2>
       </div>
     );
   }
