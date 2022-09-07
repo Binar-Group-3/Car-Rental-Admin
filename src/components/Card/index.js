@@ -7,6 +7,7 @@ class Card extends Component {
         return ( 
         <div>
             <h1>Ini komponen card milikku</h1>
+            <h1>Tambah baris kedua</h1>
         </div> );
     }
 }
