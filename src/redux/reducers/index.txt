@@ -1,0 +1,1 @@
+file untuk combine semua reducer menggunakan combinereducer dan ditaruh dalam root reducer.
