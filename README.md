@@ -1,4 +1,4 @@
-# Binar Academy Platinum Challenge Branche Ikhlas
+# Binar Academy Platinum Challenge
 
 This project was built by FER Student Wave-1
 

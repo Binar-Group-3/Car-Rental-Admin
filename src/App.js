@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Ini adalah branch punya Ikhlas</h1>
+        <h1>Ini adalah branch Development</h1>
       </header>
     </div>
   );
