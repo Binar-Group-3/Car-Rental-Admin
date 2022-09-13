@@ -1,3 +1,6 @@
+import Card from "../../components/Card";
+import React, {Component} from "react";
+
 class Dashboard extends Component {
     constructor(props) {
         super(props);
@@ -6,7 +9,7 @@ class Dashboard extends Component {
     render() { 
         return ( 
             <div>
-                <h1>Ini halaman dashboard</h1>
+                <Card />
             </div>
          );
     }

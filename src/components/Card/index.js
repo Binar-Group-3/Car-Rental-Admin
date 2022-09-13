@@ -1,15 +1,43 @@
-class Card extends Component {
-    constructor(props) {
-        super(props);
+import React from "react";
+import {useSelector, useDispatch} from "react-redux";
+import {useEffect} from "react";
+import { getMockData } from "../../redux/actions/dataAction";
+
+const Card = () => {
+    const dispatch = useDispatch();
+    const {dataUser} = useSelector((state)=> state);
+    
+    useEffect(() => {
+        dispatch(getMockData());
+    }, []);
+
+    const formatCurrency = (number) => {
+        let fNumber = number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        return "Rp. "+fNumber;
     }
-    state = {  }
-    render() { 
-        return ( 
-        <div>
-            <h1>Ini komponen card milikku</h1>
-            <h1>Tambah baris kedua</h1>
-        </div> );
-    }
+    return (
+      <div>
+           {
+                dataUser.data.map(item => (
+                    <div style={{ padding: 10 }}>
+                            <div className="card" style={{padding: 25}}>
+                                <img className="rounded-t-lg" src={item.image} style={{maxHeight: 160, maxWidth: 270}} alt="Gambar Mobil" />
+                                <p>Nama/Tipe Mobil</p>
+                                <div style={{fontFamily: 'arial', fontSize: 16, fontWeight: 700, fontStyle: 'normal', marginBottom: 8}}>{formatCurrency(item.price) + " / hari"}</div>
+                                <p>{item.category}</p>
+                                <div className="tracking-tight text-gray-900 dark:text-white" style={{marginTop: 16}}>{item.name}</div>
+                                <div className="inline-flex justify-content-center py-2 px-3 text-sm font-bold text-center text-white bg-red-500 w-100 rounded-lg hover:bg-red-700 focus:ring-4 focus:outline-none">
+                                    Delete
+                                </div >
+                                <div className="inline-flex justify-content-center py-2 px-3 text-sm font-bold text-center text-white bg-green-500 w-100 rounded-lg hover:bg-green-700 focus:ring-4 focus:outline-none">
+                                    Edit
+                                </div >
+                            </div>
+                    </div>
+                ))
+            }
+      </div>
+    )
 }
- 
+
 export default Card;
