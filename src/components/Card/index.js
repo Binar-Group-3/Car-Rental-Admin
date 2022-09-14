@@ -3,6 +3,7 @@ import {useSelector, useDispatch} from "react-redux";
 import {useEffect} from "react";
 import { getMockData, getData } from "../../redux/actions/dataAction";
 import { NoImage } from "../../assets";
+import { Link } from "react-router-dom";
 
 const Card = () => {
     const dispatch = useDispatch();
@@ -25,9 +26,11 @@ const Card = () => {
                                 <div className="inline-flex justify-content-center py-2 px-3 text-sm font-bold text-center text-white bg-red-500 w-100 rounded-lg hover:bg-red-700 focus:ring-4 focus:outline-none">
                                     Delete
                                 </div >
+                                <Link to = {`/edit/${item.id}`}>
                                 <div className="inline-flex justify-content-center py-2 px-3 text-sm font-bold text-center text-white bg-green-500 w-100 rounded-lg hover:bg-green-700 focus:ring-4 focus:outline-none">
                                     Edit
                                 </div >
+                                </Link>
                             </div>
                     </div>
                 ))
