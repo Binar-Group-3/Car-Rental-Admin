@@ -1,7 +1,7 @@
 import React from "react";
 import {useSelector, useDispatch} from "react-redux";
 import {useEffect} from "react";
-import { getMockData, getData } from "../../redux/actions/dataAction";
+import { getData } from "../../redux/actions/dataAction";
 import { NoImage } from "../../assets";
 import { Link } from "react-router-dom";
 
