@@ -19,7 +19,7 @@ const Card = () => {
     }
 
     return (
-      <div>
+      <div className="grid gap-4 grid-cols-3 grid-rows-3">
            {
                 dataUser.data.map(item => (
                     <div style={{ padding: 10 }}>
