@@ -24,7 +24,9 @@ const Card = () => {
                 dataUser.data.map(item => (
                     <div className="inline-flex p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md" style={{ padding: 10 }}>
                             <div>
+                                <div style = {{ marginLeft: 16 }}>
                                 {!!item.image ? <img className="rounded-t-lg" style = {{ maxHeight: 160, maxWidth: 270 }} src = {item.image} alt = "gambar-mobil"/> : <img className="rounded-t-lg" style = {{ maxHeight: 160, maxWidth: 270 }} src = {NoImage} alt = "no-image"/>}   
+                                </div>
                                 <div style = {{ marginLeft: 16, marginTop: 8 }}>
                                     {!!item.name ? <div style={{fontFamily: 'arial', fontSize: 16, fontStyle: 'normal', marginBottom: 8}}>{item.name}</div> : <div style={{fontFamily: 'arial', fontSize: 16, fontWeight: 700, fontStyle: 'normal', marginBottom: 8}}>Nama tidak tersedia</div>}
                                     {!!item.price ? <p style = {{ fontFamily: 'arial', fontWeight: 700 }}>{formatCurrency(item.price)} / hari</p> : <p style = {{ fontFamily: 'arial' }}>Harga tidak tersedia</p>}
