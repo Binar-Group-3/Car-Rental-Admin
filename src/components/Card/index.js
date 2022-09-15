@@ -25,10 +25,12 @@ const Card = () => {
                     <div className="inline-flex p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md" style={{ padding: 10 }}>
                             <div>
                                 {!!item.image ? <img className="rounded-t-lg" style = {{ maxHeight: 160, maxWidth: 270 }} src = {item.image} alt = "gambar-mobil"/> : <img className="rounded-t-lg" style = {{ maxHeight: 160, maxWidth: 270 }} src = {NoImage} alt = "no-image"/>}   
-                                {!!item.name ? <div style={{fontFamily: 'arial', fontSize: 16, fontStyle: 'normal', marginBottom: 8}}>{item.name}</div> : <div style={{fontFamily: 'arial', fontSize: 16, fontWeight: 700, fontStyle: 'normal', marginBottom: 8}}>Nama tidak tersedia</div>}
-                                {!!item.price ? <p style = {{ fontFamily: 'arial', fontWeight: 700 }}>{formatCurrency(item.price)} / hari</p> : <p style = {{ fontFamily: 'arial' }}>Harga tidak tersedia</p>}
-                                {!!item.category ? <p style = {{ fontFamily: 'arial', fontSize: 14 }}>{item.category}</p> : <p style = {{ fontFamily: 'arial' }}>Kategori tidak tersedia</p>}
-                                {!!item.updatedAt ? <p style = {{ fontFamily: 'arial', fontSize: 10 }}>Updated at {item.updatedAt}</p> : <p style = {{ fontFamily: 'arial' }}>Tidak ada update baru</p>}
+                                <div style = {{ marginLeft: 16, marginTop: 8 }}>
+                                    {!!item.name ? <div style={{fontFamily: 'arial', fontSize: 16, fontStyle: 'normal', marginBottom: 8}}>{item.name}</div> : <div style={{fontFamily: 'arial', fontSize: 16, fontWeight: 700, fontStyle: 'normal', marginBottom: 8}}>Nama tidak tersedia</div>}
+                                    {!!item.price ? <p style = {{ fontFamily: 'arial', fontWeight: 700 }}>{formatCurrency(item.price)} / hari</p> : <p style = {{ fontFamily: 'arial' }}>Harga tidak tersedia</p>}
+                                    {!!item.category ? <p style = {{ fontFamily: 'arial', fontSize: 14 }}>{item.category}</p> : <p style = {{ fontFamily: 'arial' }}>Kategori tidak tersedia</p>}
+                                    {!!item.updatedAt ? <p style = {{ fontFamily: 'arial', fontSize: 10 }}>Updated at {item.updatedAt}</p> : <p style = {{ fontFamily: 'arial' }}>Tidak ada update baru</p>}
+                                </div>
                                 <div class="inline-flex" role="group">
                                     <button type="button" class="text-red-700 hover:text-white border-2 border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="inline w-6 h-6">
