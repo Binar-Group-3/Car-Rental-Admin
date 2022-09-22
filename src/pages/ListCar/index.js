@@ -1,3 +1,5 @@
+import Card from "../../components/Card";
+
 const ListCar = () => {
     return (
             <div style = {{ height: 'auto', overflowX: 'hidden' }}>
