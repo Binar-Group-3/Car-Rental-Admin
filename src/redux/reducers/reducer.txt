@@ -1,1 +1,0 @@
-file untuk membuat reducer, contoh: dataReducer, authReducer
