@@ -1,5 +1,5 @@
 import React from "react";
-import TableComp from "../../components/Table/TableComp";
+import TableComp from "../../components/Table/TableComp/tableData";
 
 const Dashboard = () => {
   return (
