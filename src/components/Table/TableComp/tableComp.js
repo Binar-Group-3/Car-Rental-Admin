@@ -11,10 +11,11 @@ import {
   TableFooter,
   TablePagination,
   TableSortLabel,
+  Button,
 } from "@mui/material";
-import PaginationComp from "./Pagination/tablePagination";
+import moment from "moment/moment";
+import PaginationComp from "./Pagination/tablePaginationAction";
 import tableTitleData from "./tableTitleData";
-import TableHeader from "./Sort/tableHeader";
 
 const TableComp = () => {
   const { orderReducer } = useSelector((state) => state);
@@ -22,8 +23,8 @@ const TableComp = () => {
   const [dataPerPage, setDataPerPage] = useState(10);
   const [orderDirection, setOrderDirection] = useState("asc");
   const [valueToOrderBy, setValueToOrderBy] = useState("id");
-
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(getDataOrder());
   }, []);
@@ -38,11 +39,23 @@ const TableComp = () => {
     setCurrentPage(0);
   };
 
+  const emptyRows =
+    currentPage > 0
+      ? Math.max(
+          0,
+          (1 + currentPage) * dataPerPage - orderReducer.orderData.length
+        )
+      : 0;
+
   //FOR SORTING
   const handleRequestSort = (event, property) => {
     const isAscending = valueToOrderBy === property && orderDirection === "asc";
     setValueToOrderBy(property);
     setOrderDirection(isAscending ? "desc" : "asc");
+  };
+
+  const createSortHandler = (property) => (event) => {
+    handleRequestSort(event, property);
   };
 
   const descendingComparator = (a, b, orderBy) => {
@@ -71,16 +84,39 @@ const TableComp = () => {
     return stableRowArray.map((el) => el[0]);
   };
 
+  //FOR FORMAT CURRENCY
+  const currencyIDR = new Intl.NumberFormat("id-ID", {
+    style: "currency",
+    currency: "IDR",
+  });
+
   return (
     <div>
       <TableContainer>
         <Table>
           <TableHead>
-            <TableHeader
-              valueToOrderBy={valueToOrderBy}
-              orderDirection={orderDirection}
-              handleRequestSort={handleRequestSort}
-            />
+            <TableRow>
+              {tableTitleData.map((item) => (
+                <TableCell key={item.id}>
+                  <TableSortLabel
+                    active={valueToOrderBy === item.id}
+                    direction={
+                      valueToOrderBy == item.id ? orderDirection : "asc"
+                    }
+                    onClick={createSortHandler(item.id)}
+                  >
+                    {item.label}
+                  </TableSortLabel>
+                </TableCell>
+              ))}
+              {/* <TableHeader
+                valueToOrderBy={valueToOrderBy}
+                orderDirection={orderDirection}
+                handleRequestSort={handleRequestSort}
+              /> */}
+            </TableRow>
+          </TableHead>
+          <TableBody>
             {sortedData(
               orderReducer.orderData,
               getComparator(orderDirection, valueToOrderBy)
@@ -94,24 +130,35 @@ const TableComp = () => {
                   <TableCell>{index + 1}</TableCell>
                   <TableCell>{item.User.email}</TableCell>
                   <TableCell>tidak ada data</TableCell>
-                  <TableCell>{item.start_rent_at}</TableCell>
-                  <TableCell>{item.finish_rent_at}</TableCell>
-                  <TableCell>{item.total_price}</TableCell>
+                  <TableCell>
+                    {moment(item.start_rent_at).format("lll")}
+                  </TableCell>
+                  <TableCell>
+                    {moment(item.finish_rent_at).format("lll")}
+                  </TableCell>
+                  <TableCell>{currencyIDR.format(item.total_price)}</TableCell>
                   <TableCell>tidak ada data</TableCell>
                 </TableRow>
               ))}
-          </TableHead>
-          <TableRow>
-            <TablePagination
-              rowsPerPageOptions={[5, 10, 25, { label: "All", value: -1 }]}
-              count={orderReducer.orderData.length}
-              rowsPerPage={dataPerPage}
-              page={currentPage}
-              onPageChange={handleChangePage}
-              onRowsPerPageChange={handleChangeDataPerPage}
-              ActionsComponent={PaginationComp}
-            />
-          </TableRow>
+            {emptyRows > 0 && (
+              <TableRow style={{ height: 53 * emptyRows }}>
+                <TableCell colSpan={6} />
+              </TableRow>
+            )}
+          </TableBody>
+          <TableFooter>
+            <TableRow>
+              <TablePagination
+                rowsPerPageOptions={[5, 10, 25, { label: "All", value: -1 }]}
+                count={orderReducer.orderData.length}
+                rowsPerPage={dataPerPage}
+                page={currentPage}
+                onPageChange={handleChangePage}
+                onRowsPerPageChange={handleChangeDataPerPage}
+                ActionsComponent={PaginationComp}
+              />
+            </TableRow>
+          </TableFooter>
         </Table>
       </TableContainer>
     </div>

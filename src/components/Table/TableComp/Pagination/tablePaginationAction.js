@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTheme } from "@mui/material";
-import { IconButton, Box } from "@mui/material";
+import { IconButton, Box, Button } from "@mui/material";
 import FirstPageIcon from "@mui/icons-material/FirstPage";
 import LastPageIcon from "@mui/icons-material/LastPage";
 import { KeyboardArrowLeft, KeyboardArrowRight } from "@mui/icons-material";
@@ -32,9 +32,9 @@ const PaginationComp = (props) => {
 
   PaginationComp.propTypes = {
     count: PropTypes.number.isRequired,
-    onPageChange: PropTypes.func.isRequired,
     page: PropTypes.number.isRequired,
     rowsPerPage: PropTypes.number.isRequired,
+    onPageChange: PropTypes.func.isRequired,
   };
 
   return (
