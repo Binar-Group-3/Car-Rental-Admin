@@ -1,7 +1,9 @@
 import React from "react";
-import TableComp from "../../components/Table/TableComp/tableComp";
 import rectangle from "../../assets/rectangle.png";
 import "./dashboard.css";
+const TableComp = React.lazy(() =>
+  import("../../components/Table/TableComp/tableComp")
+);
 
 const Dashboard = () => {
   return (

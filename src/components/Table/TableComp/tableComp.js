@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, memo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getDataOrder } from "../../../redux/actions/dataTableAction";
 import {
@@ -111,7 +111,7 @@ const TableComp = () => {
               ))}
             </TableRow>
           </TableHead>
-          <TableBody>
+          <TableBody className="table_body">
             {sortedData(
               orderReducer.orderData,
               getComparator(orderDirection, valueToOrderBy)
@@ -122,17 +122,27 @@ const TableComp = () => {
               )
               .map((item, index) => (
                 <TableRow key={item}>
-                  <TableCell>{index + 1}</TableCell>
-                  <TableCell>{item.User.email}</TableCell>
-                  <TableCell>{item.CarId}</TableCell>
                   <TableCell>
-                    {moment(item.start_rent_at).format("lll")}
+                    <p>{index + 1}</p>
                   </TableCell>
                   <TableCell>
-                    {moment(item.finish_rent_at).format("lll")}
+                    <p>{item.User.email}</p>
                   </TableCell>
-                  <TableCell>{currencyIDR.format(item.total_price)}</TableCell>
-                  <TableCell>tidak ada data</TableCell>
+                  <TableCell>
+                    <p>{item.CarId}</p>
+                  </TableCell>
+                  <TableCell>
+                    <p>{moment(item.start_rent_at).format("lll")}</p>
+                  </TableCell>
+                  <TableCell>
+                    <p>{moment(item.finish_rent_at).format("lll")}</p>
+                  </TableCell>
+                  <TableCell>
+                    <p>{currencyIDR.format(item.total_price)}</p>
+                  </TableCell>
+                  <TableCell>
+                    <p>tidak ada data</p>
+                  </TableCell>
                 </TableRow>
               ))}
             {emptyRows > 0 && (
@@ -160,4 +170,4 @@ const TableComp = () => {
   );
 };
 
-export default TableComp;
+export default memo(TableComp);
