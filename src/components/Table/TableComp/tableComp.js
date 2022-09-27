@@ -11,11 +11,11 @@ import {
   TableFooter,
   TablePagination,
   TableSortLabel,
-  Button,
 } from "@mui/material";
 import moment from "moment/moment";
 import PaginationComp from "./Pagination/tablePaginationAction";
 import tableTitleData from "./tableTitleData";
+import "./tableComp.css";
 
 const TableComp = () => {
   const { orderReducer } = useSelector((state) => state);
@@ -92,10 +92,10 @@ const TableComp = () => {
 
   return (
     <div>
-      <TableContainer>
+      <TableContainer className="table_container">
         <Table>
-          <TableHead>
-            <TableRow>
+          <TableHead sx={{ backgroundColor: "#CFD4ED" }}>
+            <TableRow className="table_header">
               {tableTitleData.map((item) => (
                 <TableCell key={item.id}>
                   <TableSortLabel
@@ -105,15 +105,10 @@ const TableComp = () => {
                     }
                     onClick={createSortHandler(item.id)}
                   >
-                    {item.label}
+                    <h4>{item.label}</h4>
                   </TableSortLabel>
                 </TableCell>
               ))}
-              {/* <TableHeader
-                valueToOrderBy={valueToOrderBy}
-                orderDirection={orderDirection}
-                handleRequestSort={handleRequestSort}
-              /> */}
             </TableRow>
           </TableHead>
           <TableBody>
@@ -129,7 +124,7 @@ const TableComp = () => {
                 <TableRow key={item}>
                   <TableCell>{index + 1}</TableCell>
                   <TableCell>{item.User.email}</TableCell>
-                  <TableCell>tidak ada data</TableCell>
+                  <TableCell>{item.CarId}</TableCell>
                   <TableCell>
                     {moment(item.start_rent_at).format("lll")}
                   </TableCell>
@@ -146,7 +141,7 @@ const TableComp = () => {
               </TableRow>
             )}
           </TableBody>
-          <TableFooter>
+          <TableFooter className="table_pagination">
             <TableRow>
               <TablePagination
                 rowsPerPageOptions={[5, 10, 25, { label: "All", value: -1 }]}

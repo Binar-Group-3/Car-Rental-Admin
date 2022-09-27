@@ -13,6 +13,18 @@ import {
 const PaginationComp = (props) => {
   const theme = useTheme();
   const { count, page, rowsPerPage, onPageChange } = props;
+  // const pageNumber = [];
+  // const pages = [];
+
+  // for (let i = 1; i <= Math.ceil(count / rowsPerPage); i++) {
+  //   pages.push(i);
+  //   if (
+  //     i <= 1 ||
+  //     i == Math.ceil(count / rowsPerPage) ||
+  //     Math.abs(page - i) <= 1
+  //   )
+  //     pageNumber.push(i);
+  // }
 
   const handleJumpToFirst = (event) => {
     onPageChange(event, 0);
@@ -39,7 +51,13 @@ const PaginationComp = (props) => {
 
   return (
     <div>
-      <Box sx={{ flexShrink: 0, ml: 2.5 }}>
+      <Box
+        sx={{
+          flexShrink: 0,
+          ml: 2.5,
+          width: 200,
+        }}
+      >
         <IconButton
           onClick={handleJumpToFirst}
           disabled={page === 0}
@@ -51,6 +69,15 @@ const PaginationComp = (props) => {
             <KeyboardDoubleArrowLeftRounded />
           )}
         </IconButton>
+        {/* {pageNumber.map((item, index) => (
+          <Button
+            key={index}
+            onClick={() => page(item)}
+            className={item == page ? "active" : "inactive"}
+          >
+            {item}
+          </Button>
+        ))} */}
         <IconButton
           onClick={handlePrevious}
           disabled={page === 0}
