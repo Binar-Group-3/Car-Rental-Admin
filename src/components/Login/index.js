@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import cover from "../../assets/cover-login.png";
-
 import FormLogin from "./FormLogin";
 import ErrorLoginCard from "./ErrorLoginCard";
 import "./style.css";
