@@ -1,14 +1,14 @@
 import React, {useState} from "react";
 import {useSelector, useDispatch} from "react-redux";
 import {useEffect} from "react";
-import { getData } from "../../redux/actions/dataAction";
 import { NoImage } from "../../assets";
 import { Link } from "react-router-dom";
 import ModalDelete from "../ModalDelete";
+import { handleCar } from "../../redux/actions/carAction";
 
 const Card = () => {
     const dispatch = useDispatch();
-    const {dataUser} = useSelector((state)=> state);
+    const {cars} = useSelector((state)=> state.car);
     const [open, setOpen] = useState(false);
     const handleOpen = () => {
         setOpen(true)
@@ -16,7 +16,7 @@ const Card = () => {
     const handleClose = () => setOpen(false);
     
     useEffect(() => {
-        dispatch(getData());
+        dispatch(handleCar());
     }, []);
 
     const formatCurrency = (number) => {
@@ -27,7 +27,7 @@ const Card = () => {
     return (
       <div className="grid gap-4 grid-cols-3 grid-rows-3">
            {
-                dataUser.data.map(item => (
+                cars.map(item => (
                     <div className="inline-flex p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md" style={{ padding: 10 }}>
                             <div>
                                 <div style = {{ marginLeft: 16 }}>
