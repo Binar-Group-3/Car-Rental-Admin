@@ -1,5 +1,8 @@
 const TYPES = {
-  POST_LOGIN: "POST_LOGIN",
-};
+    FETCH_DATA: 'FETCH_DATA',
+    GET_TABLE_DATA_ORDER: "GET_TABLE_DATA_ORDER",
+    POST_LOGIN: "POST_LOGIN",
+  }
+
 
 export default TYPES;

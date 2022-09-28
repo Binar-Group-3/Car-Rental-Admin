@@ -1,18 +1,13 @@
-import TYPES from "../types";
+import {combineReducers} from "redux";
+import dataReducer from "./dataReducer";
+import orderReducer from "./orderReducer";
+import authReducer from "./authReducer";
 
-const initState = {
-  token: "",
-};
 
-const authReducer = (state = initState, action) => {
-  switch (action.type) {
-    case TYPES.POST_LOGIN:
-      return {
-        token: action.payload,
-      };
-    default:
-      return state;
-  }
-};
+const rootReducer = combineReducers({
+    dataUser: dataReducer,
+    orderReducer,
+    authReducer,
+})
 
-export default authReducer;
+export default rootReducer;
