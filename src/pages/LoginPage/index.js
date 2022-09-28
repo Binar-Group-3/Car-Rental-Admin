@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate, useLocation } from "react-router-dom";
-import Login from "../components/Login";
-import { handleLogin } from "../redux/actions/authAction";
+import Login from "../../components/Login";
+import { handleLogin } from "../../redux/actions/authAction";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
