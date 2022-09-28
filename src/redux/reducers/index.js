@@ -1,1 +1,18 @@
-file untuk combine semua reducer menggunakan combinereducer dan ditaruh dalam root reducer.
+import TYPES from "../types";
+
+const initState = {
+  token: "",
+};
+
+const authReducer = (state = initState, action) => {
+  switch (action.type) {
+    case TYPES.POST_LOGIN:
+      return {
+        token: action.payload,
+      };
+    default:
+      return state;
+  }
+};
+
+export default authReducer;

@@ -3,19 +3,20 @@ import cover from "../../assets/cover-login.png";
 
 import FormLogin from "./FormLogin";
 import ErrorLoginCard from "./ErrorLoginCard";
+import "./style.css";
 
 const Login = (props) => {
   const { errMsg } = props;
 
   return (
     <>
-      <div>
-        <div>
+      <div className="signin">
+        <div className="left">
           <img src={cover} alt="cover-login" />
         </div>
-        <div>
-          <div>
-            <div>
+        <div className="right">
+          <div className="signin-container">
+            <div className="logo">
               <Link to="/">
                 <h3>BCR LOGO</h3>
               </Link>

@@ -1,13 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router";
+import "./App.css";
+
+import LoginPage from "./pages/LoginPage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Ini adalah branch Development</h1>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/login-page" element={<LoginPage />} />
+    </Routes>
   );
 }
 
