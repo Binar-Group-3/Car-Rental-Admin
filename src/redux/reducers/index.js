@@ -1,8 +1,10 @@
+import {combineReducers} from "redux";
+import dataReducer from "./dataReducer";
 import orderReducer from "./orderReducer";
-import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
-  orderReducer,
-});
+    dataUser: dataReducer,
+    orderReducer,
+})
 
 export default rootReducer;

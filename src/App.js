@@ -1,14 +1,18 @@
-import logo from "./logo.svg";
-import "./App.css";
-import { Routes, Route } from "react-router";
-import Dashboard from "./pages/Dashboard";
+import Dashboard from './pages/Dashboard';
+import {Routes, Route, BrowserRouter} from "react-router-dom";
+import EditPage from './pages/EditPage';
+import ListCar from './pages/ListCar';
 
 function App() {
   return (
-    <div className="App">
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-      </Routes>
+    <div>
+        <BrowserRouter>
+          <Routes>
+            <Route path = "/" element = {<Dashboard />} />
+            <Route path = "/edit/:id" element= {<EditPage />} />
+            <Route path = "/listcar" element={<ListCar />} />
+          </Routes>
+        </BrowserRouter>
     </div>
   );
 }
