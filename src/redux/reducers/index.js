@@ -1,4 +1,3 @@
-// import carsReducer from "./carsReducer";
 import orderReducer from "./orderReducer";
 import { combineReducers } from "redux";
 
