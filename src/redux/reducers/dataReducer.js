@@ -1,19 +1,25 @@
-import TYPES from "../types";
+import TYPES from "../types"
 
 const initialState = {
-    data: [],
+  data: [],
+  car: {},
 }
 
-const dataReducer = (state=initialState, action) => {
-    switch (action.type) {
-        case TYPES.FETCH_DATA:
-            return {
-                ...state,
-                data: action.payload
-            }
-        default:
-            return state;
-    }
+const dataReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case TYPES.FETCH_DATA:
+      return {
+        ...state,
+        data: action.payload,
+      }
+    case TYPES.GET_CAR:
+      return {
+        ...state,
+        car: action.payload,
+      }
+    default:
+      return state
+  }
 }
 
-export default dataReducer;
+export default dataReducer
