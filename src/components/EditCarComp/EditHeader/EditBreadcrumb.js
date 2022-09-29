@@ -1,3 +1,6 @@
+// style
+import "./EditBreadcrumb.css"
+
 import { Link } from "react-router-dom"
 
 const EditBreadcrumb = () => {
