@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react"
 import { useDispatch } from "react-redux"
 import { useParams } from "react-router-dom"
 
+// style
+import "./index.css"
+
 // components
 import EditCarButton from "./EditForm/EditCarButton"
 import EditCarForm from "./EditForm/EditCarForm"

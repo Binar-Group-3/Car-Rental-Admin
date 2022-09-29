@@ -34,3 +34,7 @@ hr {
 img {
   max-width: 100% !important;
 }
+
+p {
+  font-size: 13px !important;
+}
