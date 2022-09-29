@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import { ModalImg } from '../../assets';
+import { ModalImg } from '../../../assets';
 import axios from "axios";
 import swal from "sweetalert";
 
@@ -18,10 +18,10 @@ const style = {
   };
 
 const ModalDelete = (props) => {
-    const { handleClose, open, item} = props
+    const { handleOpen, handleClose, carId, open} = props
 
     const handleDelete = (id) => {
-        console.log("Id yg terhapus", item.id);
+        console.log("Id yg terhapus", carId);
         axios
         .delete(`https://bootcamp-rent-car.herokuapp.com/admin/car/${id}`)
         .then((res)=> {
@@ -53,9 +53,9 @@ const ModalDelete = (props) => {
                         Menghapus data mobil
                     </Typography>
                     <p>Setelah dihapus, data mobil tidak dapat dikembalikan, Yakin ingin
-                    menghapus? {item.name}</p>
-                <button onClick={() => handleDelete(item.id)}>Ya</button>
-                <button>Tidak</button>
+                    menghapus?</p>
+                <button onClick={() => handleDelete(carId)}>Ya</button>
+                <button onClick={handleOpen}>Tidak</button>
             </Box>
         </Modal>
     )
