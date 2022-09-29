@@ -24,13 +24,13 @@ const EditCarButton = (props) => {
   }
 
   return (
-    <div className="car-edit-button">
-      <button onClick={handleGoBack} className="btn-outlined-primary">
-        Cancel
-      </button>
-      <button onClick={handleEditCar} className="btn-primary">
-        Save
-      </button>
+    <div className="edit-car-button">
+      <div className="edit-car-button-cancel">
+        <button onClick={handleGoBack}>Cancel</button>
+      </div>
+      <div className="edit-car-button-save">
+        <button onClick={handleEditCar}>Save</button>
+      </div>
     </div>
   )
 }
