@@ -1,13 +1,14 @@
-import {combineReducers} from "redux";
-import dataReducer from "./dataReducer";
-import orderReducer from "./orderReducer";
-import authReducer from "./authReducer";
-
+import { combineReducers } from "redux"
+import dataReducer from "./dataReducer"
+import orderReducer from "./orderReducer"
+import authReducer from "./authReducer"
+import carReducer from "./carReducer"
 
 const rootReducer = combineReducers({
-    dataUser: dataReducer,
-    orderReducer,
-    authReducer,
+  dataUser: dataReducer,
+  order: orderReducer,
+  auth: authReducer,
+  car: carReducer,
 })
 
-export default rootReducer;
+export default rootReducer
