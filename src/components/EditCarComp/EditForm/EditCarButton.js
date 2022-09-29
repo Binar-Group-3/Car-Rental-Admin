@@ -1,3 +1,6 @@
+// style
+import "./EditCarButton.css"
+
 import { useNavigate } from "react-router-dom"
 import { useParams } from "react-router-dom"
 
