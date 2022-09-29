@@ -1,3 +1,6 @@
+// style
+import "./EditCarForm.css"
+
 import { useSelector } from "react-redux"
 
 const EditCarForm = (props) => {
