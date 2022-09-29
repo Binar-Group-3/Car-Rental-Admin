@@ -2,7 +2,6 @@ import TYPES from "../types"
 
 const initialState = {
   data: [],
-  car: {},
 }
 
 const dataReducer = (state = initialState, action) => {
