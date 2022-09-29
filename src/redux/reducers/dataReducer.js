@@ -12,11 +12,7 @@ const dataReducer = (state = initialState, action) => {
         ...state,
         data: action.payload,
       }
-    case TYPES.GET_CAR:
-      return {
-        ...state,
-        car: action.payload,
-      }
+
     default:
       return state
   }
