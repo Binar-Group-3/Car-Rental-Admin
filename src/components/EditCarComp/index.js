@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux"
 import { useParams } from "react-router-dom"
 
 // func
-import { handleCar } from "../../redux/actions/dataAction"
+import { getCar } from "../../redux/actions/carAction"
 
 const EditCarComp = () => {
   // state
@@ -18,7 +18,7 @@ const EditCarComp = () => {
 
   useEffect(() => {
     const id = param.id
-    dispatch(handleCar(id))
+    dispatch(getCar(id))
   }, [dispatch, param.id])
 
   const props = {
