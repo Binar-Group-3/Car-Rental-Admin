@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 const EditBreadcrumb = () => {
   return (
     <section className="edit-breadcrumb">
-      <div className="edit-breadcrumb-container ">
+      <div className="edit-breadcrumb-container">
         <p>Cars</p>
         <i className="uil uil-angle-right-b"></i>
         <div className="link">
