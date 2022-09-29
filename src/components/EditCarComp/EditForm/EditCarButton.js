@@ -24,14 +24,14 @@ const EditCarButton = (props) => {
   }
 
   return (
-    <div className="edit-car-button">
+    <section className="edit-car-button">
       <div className="edit-car-button-cancel">
         <button onClick={handleGoBack}>Cancel</button>
       </div>
       <div className="edit-car-button-save">
         <button onClick={handleEditCar}>Save</button>
       </div>
-    </div>
+    </section>
   )
 }
 

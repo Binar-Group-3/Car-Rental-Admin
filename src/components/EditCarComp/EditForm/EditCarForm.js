@@ -6,7 +6,7 @@ const EditCarForm = (props) => {
   const { setCarName, setCarPrice, setCarImage, setCarCategory } = props
 
   return (
-    <section className="car-edit-form__container">
+    <section className="edit-car-form__container">
       <form>
         <div>
           <label>
