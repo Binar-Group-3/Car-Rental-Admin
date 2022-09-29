@@ -1,9 +1,9 @@
 import axios from "axios"
 import swal from "sweetalert"
 
-export const putEditCar = (payload, navigate, id) => {
+export const fetchCar = (data, navigate, id) => {
   axios
-    .put(`https://bootcamp-rent-car.herokuapp.com/admin/car/${id}`, payload)
+    .put(`https://bootcamp-rent-car.herokuapp.com/admin/car/${id}`, data)
     .then((res) => {
       console.log(res.status)
       if (res.status === 200) {

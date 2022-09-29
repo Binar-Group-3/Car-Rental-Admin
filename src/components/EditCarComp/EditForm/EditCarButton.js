@@ -2,9 +2,9 @@ import { useNavigate } from "react-router-dom"
 import { useParams } from "react-router-dom"
 
 // fetch
-// import { putEditCar } from "../putEditCar"
+import { fetchCar } from "../fetchCar"
 
-const CarEditButton = (props) => {
+const EditCarButton = (props) => {
   const { carName, carPrice, carImage, carCategory } = props
 
   //   func
@@ -15,13 +15,12 @@ const CarEditButton = (props) => {
   }
   const handleEditCar = () => {
     const id = param.id
-    const payload = {
-      name: carName,
-      category: carCategory,
-      price: carPrice,
-      image: carImage,
-    }
-    // putEditCar(payload, navigate, id)
+    const data = new FormData()
+    data.append("name", carName)
+    data.append("category", carCategory)
+    data.append("price", carPrice)
+    data.append("image", carImage)
+    fetchCar(data, navigate, id)
   }
 
   return (
@@ -36,4 +35,4 @@ const CarEditButton = (props) => {
   )
 }
 
-export default CarEditButton
+export default EditCarButton
