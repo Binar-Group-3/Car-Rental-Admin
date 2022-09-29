@@ -10,6 +10,7 @@ function App() {
       <Routes>
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="cars" element={<ListCar />} />
+        {/* page buat add car ada di sini */}
         <Route path="cars/edit-car/:id" element={<EditPage />} />
         <Route path="login" element={<LoginPage />} />
         <Route path="*" element={<Navigate to="dashboard" replace />} />
