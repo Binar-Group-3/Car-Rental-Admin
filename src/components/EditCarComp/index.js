@@ -2,7 +2,11 @@ import React, { useState, useEffect } from "react"
 import { useDispatch } from "react-redux"
 import { useParams } from "react-router-dom"
 
-// func
+// components
+import EditCarButton from "./EditForm/EditCarButton"
+import EditCarForm from "./EditForm/EditCarForm"
+
+// functions
 import { getCar } from "../../redux/actions/carAction"
 
 const EditCarComp = () => {
@@ -34,7 +38,12 @@ const EditCarComp = () => {
 
   return (
     <section className="edit-car-comp">
-      <main className="edit-car-comp"></main>
+      <main className="edit-car-comp__container">
+        <div className="edit-car-comp__form">
+          <EditCarForm {...props} />
+          <EditCarButton {...props} />
+        </div>
+      </main>
     </section>
   )
 }
