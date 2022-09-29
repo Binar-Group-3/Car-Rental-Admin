@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom"
 // components
 import EditCarButton from "./EditForm/EditCarButton"
 import EditCarForm from "./EditForm/EditCarForm"
+import EditHeader from "./EditHeader"
 
 // functions
 import { getCar } from "../../redux/actions/carAction"
@@ -39,6 +40,7 @@ const EditCarComp = () => {
   return (
     <section className="edit-car-comp">
       <main className="edit-car-comp__container">
+        <EditHeader />
         <div className="edit-car-comp__form">
           <EditCarForm {...props} />
           <EditCarButton {...props} />
