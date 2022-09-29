@@ -1,7 +1,7 @@
 import axios from "axios"
 import swal from "sweetalert"
 
-export const fetchCar = (data, navigate, id) => {
+export const fetchEditCar = (data, navigate, id) => {
   axios
     .put(`https://bootcamp-rent-car.herokuapp.com/admin/car/${id}`, data)
     .then((res) => {

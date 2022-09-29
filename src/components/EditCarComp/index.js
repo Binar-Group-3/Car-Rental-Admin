@@ -23,16 +23,20 @@ const EditCarComp = () => {
   // hook
   const dispatch = useDispatch()
   const param = useParams()
-
   useEffect(() => {
     const id = param.id
     dispatch(getCar(id))
   }, [dispatch, param.id])
 
+  const onImageUpload = (e) => {
+    const file = e.target.files[0]
+    setCarImage(file)
+  }
+
   const props = {
     setCarName,
     setCarPrice,
-    setCarImage,
+    onImageUpload,
     setCarCategory,
     carName,
     carPrice,

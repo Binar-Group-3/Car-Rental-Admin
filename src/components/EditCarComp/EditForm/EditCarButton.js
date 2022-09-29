@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom"
 import { useParams } from "react-router-dom"
 
 // fetch
-import { fetchCar } from "../fetchCar"
+import { fetchEditCar } from "../fetchEditCar"
 
 const EditCarButton = (props) => {
   const { carName, carPrice, carImage, carCategory } = props
@@ -23,7 +23,7 @@ const EditCarButton = (props) => {
     data.append("category", carCategory)
     data.append("price", carPrice)
     data.append("image", carImage)
-    fetchCar(data, navigate, id)
+    fetchEditCar(data, navigate, id)
   }
 
   return (
