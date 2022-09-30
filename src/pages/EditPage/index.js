@@ -1,9 +1,25 @@
-import React from "react";
+import React from "react"
+import { Navigate } from "react-router-dom"
+import { useSelector } from "react-redux"
+
+//# comp
+import EditCarComp from "../../components/EditCarComp"
 
 const EditPage = () => {
-    <div>
-        <h1>Ini adalah halaman Edit page</h1>
-    </div>
+  //   const user = localStorage.getItem("token")
+  //   const { showNav } = useSelector((state) => state.showNav)
+
+  return (
+    <>
+      <main>
+        {/* <Header /> */}
+        {/* <Sidebar /> */}
+        <section className="edit-car-page">
+          <EditCarComp />
+        </section>
+      </main>
+    </>
+  )
 }
 
-export default EditPage;
+export default EditPage

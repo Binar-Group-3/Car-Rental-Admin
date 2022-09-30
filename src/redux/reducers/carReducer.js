@@ -6,9 +6,13 @@ const initialState = {
 
 const carReducer = (state = initialState, action) => {
   switch (action.type) {
+    case TYPES.GET_CAR:
+      return {
+        car: action.payload,
+      }
     case TYPES.GET_CARS:
       return {
-        cars: action.payload,
+        car: action.payload
       }
     default:
       return state

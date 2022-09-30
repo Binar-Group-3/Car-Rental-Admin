@@ -14,10 +14,9 @@ const Card = () => {
         dispatch(handleCar());
     }, []);
 
-    const formatCurrency = (number) => {
-        let fNumber = number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-        return !!fNumber ? "Rp. "+fNumber : "Harga tidak tersedia";
-    }
+  useEffect(() => {
+    dispatch(getData())
+  }, [])
 
     return (
       <div className="grid gap-4 grid-cols-3 grid-rows-3">
@@ -53,4 +52,4 @@ const Card = () => {
     )
 }
 
-export default Card;
+export default Card
