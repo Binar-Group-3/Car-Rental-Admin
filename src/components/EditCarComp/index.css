@@ -6,14 +6,14 @@
   padding: 0 1rem;
 }
 
-.edit-car-comp__container {
+.edit-car-comp .edit-car-comp__container {
   height: 80%;
   padding: 2rem;
   display: flex;
   flex-direction: column;
 }
 
-.edit-car-comp__form {
+.edit-car-comp__container .edit-car-comp__form {
   height: 100%;
   display: flex;
   flex-direction: column;
