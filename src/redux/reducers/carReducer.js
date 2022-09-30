@@ -1,6 +1,7 @@
 import TYPES from "../types"
 
 const initialState = {
+  car: {},
   cars: [],
 }
 
@@ -12,7 +13,7 @@ const carReducer = (state = initialState, action) => {
       }
     case TYPES.GET_CARS:
       return {
-        car: action.payload
+        car: action.payload,
       }
     default:
       return state
