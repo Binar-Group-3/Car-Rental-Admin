@@ -3,12 +3,12 @@
   padding: 0px 0px 0px 0px;
 }
 
-.container {
+.container-dashboard {
   max-width: 1100px !important;
   margin: 0 auto !important;
 }
 
-h1 {
+.container-dashboard h1 {
   display: flex;
   margin-bottom: 24px;
   width: 105px;
