@@ -23,7 +23,13 @@ const ModalDelete = (props) => {
     const handleDelete = (id) => {
         console.log("Id yg terhapus", carId);
         axios
-        .delete(`https://bootcamp-rent-car.herokuapp.com/admin/car/${id}`)
+        .delete(`https://bootcamp-rent-cars.herokuapp.com/admin/car/${id}`,{
+            headers: {
+              "Content-Type": "Application/json",
+              "accept": "Application/json",
+              "access_token": 
+              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhbHNhQHNhbHNhLmNvbSIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTY2NTY3MDM3N30.iR-2vyAeAZX11u7AOKXCgNJYey-_eg58E8zZVgu4Z7Y"
+            }})
         .then((res)=> {
             console.log(res.status);
             console.log(res);
