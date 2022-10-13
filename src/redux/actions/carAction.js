@@ -13,7 +13,7 @@ export const handleCar = () => (dispatch) => {
   .then((res) => {
     dispatch({
       type: TYPES.FETCH_DATA,
-      payload: res.data,
+      payload: res.data.cars,
     })
   })
   .catch((err) => console.log(err))

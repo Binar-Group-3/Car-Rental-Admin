@@ -11,9 +11,10 @@ export const getData = () => (dispatch) => {
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhbHNhQHNhbHNhLmNvbSIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTY2NTY3MDM3N30.iR-2vyAeAZX11u7AOKXCgNJYey-_eg58E8zZVgu4Z7Y"
       }})
     .then((res) => {
+      console.log(res);
       dispatch({
         type: TYPES.FETCH_DATA,
-        payload: res.data,
+        payload: res.data.cars,
       })
     })
     .catch((err) => console.log(err))
