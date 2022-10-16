@@ -1,14 +1,14 @@
-* {
+/* * {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
-}
+} */
 
-.container {
+/* .container {
   max-width: 1100px !important;
   margin: 0 auto !important;
-}
+} */
 
-h1 {
+/* h1 {
   display: flex;
   margin-bottom: 24px;
   width: 105px;
@@ -18,7 +18,7 @@ h1 {
   font-weight: 700;
   font-size: 20px;
   line-height: 30px;
-}
+} */
 
 .list_order {
   display: flex;
@@ -44,4 +44,25 @@ h1 {
   gap: 1px;
   width: 1100px;
   height: 494px;
+}
+
+.container-dasboard__ {
+  margin-top: 4rem /* 64px */;
+  height: 200vh;
+  --tw-bg-opacity: 1;
+  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+@media (min-width: 768px) {
+  .container-dasboard__on {
+    margin-left: 5rem /* 80px */;
+  }
+}
+@media (min-width: 768px) {
+  .container-dasboard__off {
+    margin-left: 15rem /* 240px */;
+  }
 }
