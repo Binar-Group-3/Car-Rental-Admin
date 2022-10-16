@@ -17,6 +17,7 @@ import "./style.scss";
 
 const Navbar = ({ handleSidebar, sidebar }) => {
   const counter = useSelector((state) => state.navbarReducer);
+  console.log(counter);
   const dispatch = useDispatch();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -34,7 +35,7 @@ const Navbar = ({ handleSidebar, sidebar }) => {
 
   return (
     <div className="ikhlas">
-      <div className="md:ml-20 h-16 flex justify-between fixed bg-white  inset-x-0 top-0 drop-shadow">
+      <div className="md:ml-20 h-16 flex justify-between fixed bg-white  inset-x-0 top-0 drop-shadow z-50">
         <div
           className={`flex justify-start ${
             sidebar === true ? "-translate-x-40" : "translate-x-0"

@@ -49,7 +49,7 @@ const Sidebar = ({ sidebar }) => {
         <div className="h-screen"></div>
       </div>
       <div
-        className={`fixed md:block w-40 hidden left-20 top-16 bottom-0 overscroll-auto hover:overscroll-contain overflow-auto transition-all z-40 bg-white ${
+        className={`fixed md:block w-40 hidden left-20 top-16 bottom-0 overscroll-auto hover:overscroll-contain overflow-auto transition-all z-40 bg-white z-40 ${
           sidebar === true ? "md:-translate-x-40" : "md:translate-x-0"
         }`}
       >
