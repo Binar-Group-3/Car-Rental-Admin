@@ -30,7 +30,7 @@ const Sidebar = ({ sidebar }) => {
           </div>
         </NavLink>
         <NavLink
-          to="/dashboard/car"
+          to="/dashboard/cars"
           className={({ isActive, isPending }) =>
             isActive
               ? "bg-blue-800 h-16 flex items-center justify-center"
