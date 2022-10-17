@@ -1,8 +1,8 @@
-import Dashboard from "./pages/Dashboard"
-import { Routes, Route, Navigate } from "react-router-dom"
-import EditPage from "./pages/EditPage"
-import ListCar from "./pages/ListCar"
-import LoginPage from "./pages/LoginPage"
+import Dashboard from "./pages/Dashboard";
+import { Routes, Route, Navigate } from "react-router-dom";
+import EditPage from "./pages/EditPage";
+import ListCar from "./pages/ListCar";
+import LoginPage from "./pages/LoginPage";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
         <Route path="*" element={<Navigate to="dashboard" replace />} />
       </Routes>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
