@@ -1,0 +1,24 @@
+.button-delete {
+    width: 144px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    color: white;
+    border: 1px solid #f4f5f7;
+    padding: 1 2;
+    border-radius: default;
+    background-color: transparent;
+    border: 1px solid red;
+    color: red;
+}
+
+.button-delete p {
+    font-weight: 700;
+    font-size: 14px;
+}
