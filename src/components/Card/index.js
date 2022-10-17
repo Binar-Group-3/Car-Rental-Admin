@@ -2,9 +2,10 @@ import React from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { useEffect } from "react"
 import { getData } from "../../redux/actions/dataAction"
-import { NoImage } from "../../assets"
 import { Link } from "react-router-dom"
+import { NoImage } from "../../assets"
 import ButtonDelete from "./ButtonDelete"
+import ButtonEdit from "./ButtonEdit"
 
 const Card = () => {
   const dispatch = useDispatch()
@@ -39,7 +40,7 @@ const Card = () => {
               <div className="car-card__button">
                   <ButtonDelete carId = {item.id} />
                   <Link to={`edit-car/${item.id}`}>
-                    <button>Edit</button>
+                  <ButtonEdit />
                   </Link>
               </div>
             </div>
