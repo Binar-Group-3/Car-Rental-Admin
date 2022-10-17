@@ -1,6 +1,6 @@
 const ButtonEdit = () => {
     <>
-        <button>
+        <button className="button-edit">
             <p>Edit</p>
         </button>
     </>
