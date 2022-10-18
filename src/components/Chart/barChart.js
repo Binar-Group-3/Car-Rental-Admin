@@ -43,9 +43,28 @@ const BarChart = () => {
     });
   }, [chartData]);
 
+  const options = {
+    scales: {
+      x: {
+        beginAtZero: true,
+        title: {
+          display: true,
+          text: "Date"
+        }
+      },
+      y: {
+        beginAtZero: true,
+        title: {
+          display: true,
+          text: "Amout of Car Rented"
+        }
+      }
+    }
+  }
+
   return (
     <div>
-      <Bar data={dataChart} />
+      <Bar data={dataChart} options={options} />
     </div>
   );
 };

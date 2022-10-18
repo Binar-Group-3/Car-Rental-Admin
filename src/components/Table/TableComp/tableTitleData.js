@@ -10,7 +10,7 @@ const tableTitleData = [
   },
   {
     id: "CarId",
-    label: "Car",
+    label: "Car ID",
     numeric: false,
   },
   {
@@ -29,7 +29,7 @@ const tableTitleData = [
     numeric: true,
   },
   {
-    id: "CarId",
+    id: "Car.category",
     label: "Category",
     numeric: false,
   },

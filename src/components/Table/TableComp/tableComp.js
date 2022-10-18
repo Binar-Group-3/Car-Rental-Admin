@@ -141,7 +141,7 @@ const TableComp = () => {
                     <p>{currencyIDR.format(item.total_price)}</p>
                   </TableCell>
                   <TableCell>
-                    <p>tidak ada data</p>
+                    <p>-</p>
                   </TableCell>
                 </TableRow>
               ))}
