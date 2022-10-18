@@ -24,17 +24,6 @@ const ChartComp = () => {
     getData(value);
   }, []);
 
-  // FOR GET MONTH ONLY
-  const monthData = chartData.map((item) => moment(item, "D MMM").format("MMM"))
-  const monthOnly = monthData.filter((element, index) => {
-    return monthData.indexOf(element) === index;
-  });
-
-  // FOR HANDLE CLICK
-  const handleClick = () => {
-    getData(value)
-  }
-
   return (
     <div>
       <BarChart />
