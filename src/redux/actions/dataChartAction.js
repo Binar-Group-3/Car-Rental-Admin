@@ -14,7 +14,7 @@ export const getDataChart = (value) => (dispatch) => {
         })
         .then((res) => {
             const datas = res.data
-            const dateData = datas.map(
+            const dateData = datas.orders.map(
                 (item) => moment(item.start_rent_at).format("D MMM")
             );
             const dataFilter = dateData.filter((item) => item.includes(value));
@@ -22,7 +22,7 @@ export const getDataChart = (value) => (dispatch) => {
                 item
             );
             dispatch({
-                type: TYPES.GET_CHART_DATA_MONTH,
+                type: TYPES.GET_CHART_DATA_ORDER,
                 payload: dateOnly,
             });
         })

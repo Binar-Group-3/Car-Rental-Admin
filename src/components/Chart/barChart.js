@@ -1,12 +1,14 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
   BarElement,
 } from "chart.js";
+import moment from "moment";
 
 ChartJS.register(CategoryScale, LinearScale, BarElement);
 
