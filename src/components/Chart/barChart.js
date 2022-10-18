@@ -37,6 +37,7 @@ const BarChart = () => {
         {
           label: "Rental",
           data: Object.values(countData),
+          backgroundColor: "#586B90"
         },
       ],
     });

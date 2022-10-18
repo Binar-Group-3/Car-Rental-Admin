@@ -15,7 +15,7 @@ import {
 import moment from "moment/moment";
 import PaginationComp from "./Pagination/tablePaginationAction";
 import tableTitleData from "./tableTitleData";
-import "./tableComp.css";
+import "./tableComp.scss";
 
 const TableComp = () => {
   const { orderReducer } = useSelector((state) => state);
@@ -42,9 +42,9 @@ const TableComp = () => {
   const emptyRows =
     currentPage > 0
       ? Math.max(
-          0,
-          (1 + currentPage) * dataPerPage - orderReducer.orderData.length
-        )
+        0,
+        (1 + currentPage) * dataPerPage - orderReducer.orderData.length
+      )
       : 0;
 
   //FOR SORTING
@@ -91,7 +91,7 @@ const TableComp = () => {
   });
 
   return (
-    <div>
+    <div className="table_component_style">
       <TableContainer className="table_container">
         <Table>
           <TableHead sx={{ backgroundColor: "#CFD4ED" }}>
