@@ -13,16 +13,17 @@ export const getDataChart = (value) => (dispatch) => {
             },
         })
         .then((res) => {
-            const dateData = res.data.orders.map(
+            const datas = res.data
+            const dateData = datas.map(
                 (item) => moment(item.start_rent_at).format("D MMM")
             );
             const dataFilter = dateData.filter((item) => item.includes(value));
-            const dataDaily = dataFilter.map((item) =>
-                moment(item, "D MMM").format("D")
+            const dateOnly = dataFilter.map((item) =>
+                item
             );
             dispatch({
-                type: TYPES.GET_CHART_DATA_ORDER,
-                payload: dataDaily,
+                type: TYPES.GET_CHART_DATA_MONTH,
+                payload: dateOnly,
             });
         })
         .catch((err) => console.log(err));
