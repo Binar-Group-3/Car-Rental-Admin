@@ -24,8 +24,20 @@ const ChartComp = () => {
     getData(value);
   }, []);
 
+  // FOR GET MONTH ONLY
+  const monthData = chartData.map((item) => moment(item, "D MMM").format("MMM"))
+  const monthOnly = monthData.filter((element, index) => {
+    return monthData.indexOf(element) === index;
+  });
+
   return (
     <div>
+      <select onChange={(e) => setValue(e.target.value)}>
+        {monthOnly.map((item) => (
+          !!item.length &&
+          <option value={item}>{item} - 2022</option>
+        ))}
+      </select>
       <BarChart />
     </div>
   );
