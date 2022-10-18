@@ -30,6 +30,10 @@ const ChartComp = () => {
     return monthData.indexOf(element) === index;
   });
 
+  const handleDropdownDate = () => {
+    getData(value)
+  }
+
   return (
     <div>
       <select onChange={(e) => setValue(e.target.value)}>
@@ -38,6 +42,7 @@ const ChartComp = () => {
           <option value={item}>{item} - 2022</option>
         ))}
       </select>
+      <button onClick={handleDropdownDate}>Go</button>
       <BarChart />
     </div>
   );
