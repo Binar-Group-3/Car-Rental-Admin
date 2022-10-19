@@ -1,8 +1,10 @@
 import React from "react";
 import rectangle from "../../assets/rectangle.png";
-import ChartComp from "../../components/Chart/chartComp";
 import "./dashboard.scss";
 import { useState, useEffect } from "react";
+const ChartComp = React.lazy(() =>
+  import("../../components/Chart/chartComp")
+);
 const TableComp = React.lazy(() =>
   import("../../components/Table/TableComp/tableComp")
 );
