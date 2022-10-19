@@ -12,7 +12,7 @@ const Dashboard = () => {
     <div className="dashboard_style">
       <div className="container-dashboard">
         <div className="breadcrumb-dashboard">
-          <a>Dashboard</a>
+          <a href="#chart-dashboard">Dashboard</a>
           <h1>&gt;</h1>
           <a href="#table-dashboard">Dashboard</a>
         </div>
