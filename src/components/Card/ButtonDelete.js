@@ -14,7 +14,7 @@ const ButtonDelete = ({carId}) => {
         <button onClick={handleOpen} type="button" className="button-delete">
             <p>Delete</p>
         </button>
-        {open && <ModalDelete open = {open}carId = {carId} handleOpen = {handleOpen} handleClose = {handleClose}/>}
+        {open && <ModalDelete carId = {carId} handleOpen = {handleOpen} handleClose = {handleClose}/>}
         </div>
     )
 }

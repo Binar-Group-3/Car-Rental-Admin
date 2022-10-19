@@ -3,7 +3,7 @@ import axios from "axios";
 import swal from "sweetalert";
 
 const ModalDelete = (props) => {
-    const { handleOpen, handleClose, carId, open} = props
+    const { handleOpen, handleClose, carId } = props
 
     const handleDelete = (id) => {
         console.log("Id yg terhapus", carId);
@@ -32,16 +32,16 @@ const ModalDelete = (props) => {
     }
 
     return (
-        <div className="modal-delete__backdrop">
-            <div className="modal">
-                <div className="modal-content">
+        <div className="modal">
+            <div className="modal-content">
+                <div className="modal-body">
                     <img src = {ModalImg} alt="car"/>
                     <h3>Menghapus Data Mobil?</h3>
                     <p>
                     Setelah dihapus, data mobil tidak dapat dikembalikan, Yakin ingin menghapus?
                     </p>
-                <div className="modal-button">
-                    <button onClick={() => handleDelete(carId)}>
+                <div className="modal-footer">
+                    <button className="button" onClick={() => handleDelete(carId)}>
                         Ya
                     </button>
                     <button onClick={handleOpen}>
