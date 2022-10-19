@@ -21,23 +21,23 @@ const Card = () => {
   }
 
   return (
-    <div className="car-card_container">
+    <div className="card-list-container">
       {dataUser.data.map((item) => (
         <>
-          <div className="car-card__body">
-            <div className="car-card__image">
+          <div className="card">
+            <div className="card-image">
               <img src = {item.image ? item.image : NoImage} alt="car"/>
             </div>
-            <div className="car-card__content">
+            <div className="card-content">
               <p>{item.name}</p>
               <h4>{`${formatCurrency(item.price)} / hari`}</h4>
-              <div className="car-category">
+              <div className="card-category">
                 <p>{item.category}</p>
               </div>
-              <div className="car-updated">
+              <div className="card-updated">
                   Updated at {item.updatedAt}
               </div>
-              <div className="car-card__button">
+              <div className="card-button">
                   <ButtonDelete carId = {item.id} />
                   <Link to={`edit-car/${item.id}`}>
                   <ButtonEdit />
