@@ -8,11 +8,25 @@ const TableComp = React.lazy(() =>
 );
 
 const Dashboard = () => {
+
+  //FOR BREADCRUMB CHANGE STYLE WHEN SCROLLED
+
+  const [color, setColor] = useState(false)
+  const changeColor = () => {
+    if (window.scrollY >= 500) {
+      setColor(true)
+    } else {
+      setColor(false)
+    }
+  }
+
+  window.addEventListener('scroll', changeColor)
+
   return (
     <div className="dashboard_style">
       <div className="container-dashboard">
-        <div className="breadcrumb-dashboard">
-          <a href="#chart-dashboard">Dashboard</a>
+        <div className={color ? "breadcrumb-scrolled" : "breadcrumb-dashboard"}>
+          <h1>Dashboard</h1>
           <h1>&gt;</h1>
           <a href="#table-dashboard">Dashboard</a>
         </div>

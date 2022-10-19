@@ -73,5 +73,50 @@
     justify-content: space-between;
     width: 146px;
     gap: 10px;
+    position: fixed;
+  }
+
+  .breadcrumb-dashboard h1 {
+    font-family: "Arial";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .breadcrumb-dashboard a {
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 18px;
+    text-decoration: none;
+    color: #222222;
+  }
+
+  .breadcrumb-scrolled {
+    display: flex;
+    justify-content: space-between;
+    width: 146px;
+    gap: 10px;
+    position: fixed;
+  }
+
+  .breadcrumb-scrolled h1 {
+    font-family: "Arial";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .breadcrumb-scrolled a {
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    text-decoration: none;
+    color: #222222;
   }
 }
