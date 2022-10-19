@@ -67,4 +67,11 @@
     line-height: 18px;
     margin-bottom: 8px;
   }
+
+  .breadcrumb-dashboard {
+    display: flex;
+    justify-content: space-between;
+    width: 146px;
+    gap: 10px;
+  }
 }

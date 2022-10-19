@@ -2,6 +2,7 @@ import React from "react";
 import rectangle from "../../assets/rectangle.png";
 import ChartComp from "../../components/Chart/chartComp";
 import "./dashboard.scss";
+import { useState, useEffect } from "react";
 const TableComp = React.lazy(() =>
   import("../../components/Table/TableComp/tableComp")
 );
@@ -10,6 +11,11 @@ const Dashboard = () => {
   return (
     <div className="dashboard_style">
       <div className="container-dashboard">
+        <div className="breadcrumb-dashboard">
+          <a>Dashboard</a>
+          <h1>&gt;</h1>
+          <a href="#table-dashboard">Dashboard</a>
+        </div>
         <div id="chart-dashboard">
           <div className="component_title">
             <img src={rectangle} />
