@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 import { NoImage } from "../../assets"
 import ButtonDelete from "./ButtonDelete"
+import {Button} from "react-bootstrap";
 
 const Card = ({item, handleDelete}) => {
 
@@ -22,9 +23,9 @@ const Card = ({item, handleDelete}) => {
             <div className="row w-100">
                 <div className="col-6">
                     <Link to={`/dashboard/cars/edit-car/${item.id}`}>
-                        <button className="btn btn-success">
+                        <Button variant = "success" size = "lg" className="w-100">
                             Edit
-                        </button>
+                        </Button>
                     </Link>
                 </div>
                 <div className="col-6">
