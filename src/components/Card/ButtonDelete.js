@@ -1,11 +1,11 @@
+import {Button} from "react-bootstrap";
+
 const ButtonDelete = ({carId, onClick}) => {
     
     return (
-        <div>
-            <button onClick={() => { onClick(carId) }} type="button" className="btn btn-outline-danger">
+            <Button onClick={() => { onClick(carId) }} type="button" variant="outline-danger" size="lg" className="w-100">
                 Delete
-            </button>
-        </div>
+            </Button>
     )
 }
 
