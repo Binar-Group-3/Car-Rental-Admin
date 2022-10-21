@@ -1,12 +1,22 @@
-import React from "react"
+import React, {useState} from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { useEffect } from "react"
 import { getData } from "../../redux/actions/dataAction"
 import Card from "../../components/Card";
+import ModalDelete from "../../components/Card/ModalDelete";
 
 const ListCar = () => {
     const dispatch = useDispatch()
     const { dataUser } = useSelector((state) => state)
+
+    const [show, setShow] = useState(false);
+    const [carId, setCarId] = useState(null);
+
+    const modalDeleteClose = () => setShow(false);
+    const modalDeleteShow = (id) => {
+        setShow(true);
+        setCarId(id);
+    };
 
     useEffect(() => {
         dispatch(getData())
@@ -23,6 +33,7 @@ const ListCar = () => {
                     ))}
                 </div>
             </div>
+            <ModalDelete show={show} handleClose={modalDeleteClose} carId={carId}/>
         </>
     )
 }

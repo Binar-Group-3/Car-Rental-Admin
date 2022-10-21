@@ -4,7 +4,7 @@ import { NoImage } from "../../assets"
 import ButtonDelete from "./ButtonDelete"
 import ButtonEdit from "./ButtonEdit"
 
-const Card = ({item}) => {
+const Card = ({item, handleDelete}) => {
 
   const formatCurrency = (number) => {
     let fNumber = number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
@@ -21,7 +21,7 @@ const Card = ({item}) => {
           <p class="card-text">{item.category}</p>
           <p class="card-text">Updated at {item.updatedAt}</p>
           <div class="d-flex justify-content-between">
-            <ButtonDelete carId={item.id} />
+            <ButtonDelete carId={item.id} onClick={handleDelete} />
             <Link to={`edit-car/${item.id}`}>
               <ButtonEdit />
             </Link>
