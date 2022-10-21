@@ -1,7 +1,7 @@
 const ButtonEdit = () => {
     <>
-        <button className="button-edit">
-            <p>Edit</p>
+        <button className="btn btn-success">
+            Edit
         </button>
     </>
 }
