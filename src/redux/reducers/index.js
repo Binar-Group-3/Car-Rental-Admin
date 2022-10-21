@@ -11,7 +11,7 @@ const rootReducer = combineReducers({
     car: carReducer,
     authReducer,
     dataUser: dataReducer,
-    chartReducer
+    chartReducer,
     navbarReducer
 })
 
