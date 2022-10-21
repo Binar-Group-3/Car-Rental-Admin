@@ -2,7 +2,6 @@ import React from "react"
 import { Link } from "react-router-dom"
 import { NoImage } from "../../assets"
 import ButtonDelete from "./ButtonDelete"
-import ButtonEdit from "./ButtonEdit"
 
 const Card = ({item, handleDelete}) => {
 
@@ -21,10 +20,12 @@ const Card = ({item, handleDelete}) => {
           <p class="card-text">{item.category}</p>
           <p class="card-text">Updated at {item.updatedAt}</p>
           <div class="d-flex justify-content-between">
-            <ButtonDelete carId={item.id} onClick={handleDelete} />
             <Link to={`/dashboard/cars/edit-car/${item.id}`}>
-              <ButtonEdit />
+                <button className="btn btn-success">
+                    Edit
+                </button>
             </Link>
+            <ButtonDelete carId={item.id} onClick={handleDelete} />
           </div>
         </div>
       </div>
