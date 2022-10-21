@@ -1,7 +1,7 @@
 import React from "react";
 import rectangle from "../../assets/rectangle.png";
 import "./dashboard.scss";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 const ChartComp = React.lazy(() =>
   import("../../components/Chart/chartComp")
 );
@@ -12,7 +12,6 @@ const TableComp = React.lazy(() =>
 const Dashboard = () => {
 
   //FOR BREADCRUMB CHANGE STYLE WHEN SCROLLED
-
   const [color, setColor] = useState(false)
   const changeColor = () => {
     if (window.scrollY >= 500) {
