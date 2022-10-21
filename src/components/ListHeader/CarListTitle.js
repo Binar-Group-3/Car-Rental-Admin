@@ -1,13 +1,18 @@
 import React from "react";
+import {Button} from "react-bootstrap";
 
 const CarListTitle = () => {
     return (
-        <>
-            <h1 className='mx-3 my-3'>List Car</h1>
-            <button className="btn-primary">
-                Add New Car
-            </button>
-        </>
+        <div className="row w-100">
+            <div className="col-6">
+                <h1 className='mx-3 my-3'>List Car</h1>
+            </div>
+            <div className="col-6">
+                <Button variant = "primary" size="md" className="position-absolute top-20 end-0 mx-3 my-4">
+                    Add New Car
+                </Button>
+            </div>
+        </div>
     )
 }
 
