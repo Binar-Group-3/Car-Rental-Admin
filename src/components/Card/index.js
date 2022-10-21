@@ -12,31 +12,23 @@ const Card = ({item}) => {
   }
 
   return (
-    <div className="card-list-container">
-        <>
-          <div className="card">
-            <div className="card-image">
-              <img src = {item.image ? item.image : NoImage} alt="car"/>
-            </div>
-            <div className="card-content">
-              <p>{item.name}</p>
-              <h4>{`${formatCurrency(item.price)} / hari`}</h4>
-              <div className="card-category">
-                <p>{item.category}</p>
-              </div>
-              <div className="card-updated">
-                  Updated at {item.updatedAt}
-              </div>
-              <div className="card-button">
-                  <ButtonDelete carId = {item.id} />
-                  <Link to={`edit-car/${item.id}`}>
-                  <ButtonEdit />
-                  </Link>
-              </div>
-            </div>
+    <>
+      <div className="card" style={{ width: '100%', height: 'auto' }} >
+        <img className="card-image-top" src={item.image ? item.image : NoImage} alt="car" style={{ width: '100%' }} />
+        <div className="card-body" style={{ height: 'auto' }}>
+          <h5 class="card-title">{item.name}</h5>
+          <h6 class="card-subtitle mb-2">{`${formatCurrency(item.price)} / hari`}</h6>
+          <p class="card-text">{item.category}</p>
+          <p class="card-text">Updated at {item.updatedAt}</p>
+          <div class="d-flex justify-content-between">
+            <ButtonDelete carId={item.id} />
+            <Link to={`edit-car/${item.id}`}>
+              <ButtonEdit />
+            </Link>
           </div>
-        </>
-    </div>
+        </div>
+      </div>
+    </>
   )
 }
 
