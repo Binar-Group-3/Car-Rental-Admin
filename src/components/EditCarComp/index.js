@@ -26,6 +26,7 @@ const EditCarComp = () => {
   useEffect(() => {
     const id = param.id
     dispatch(getCar(id))
+    window.scroll(0, 0)
   }, [dispatch, param.id])
 
   const onImageUpload = (e) => {

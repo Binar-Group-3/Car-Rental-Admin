@@ -1,0 +1,35 @@
+.chart_component_style {
+  .action-button {
+    display: flex;
+  }
+
+  .dropdown_button {
+    width: 122px;
+    height: 36px;
+    box-sizing: border-box;
+    border: 1px solid #d0d0d0;
+    border-radius: 2px 0px 0px 2px;
+    font-family: "Arial";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    padding-left: 8px;
+    margin-bottom: 45px !important;
+    background-color: white;
+  }
+
+  .go_button {
+    background-color: #0d28a6;
+    border: 1px solid #0d28a6;
+    border-radius: 0px 2px 2px 0px;
+    width: 43px;
+    height: 36px;
+    color: white;
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+  }
+}

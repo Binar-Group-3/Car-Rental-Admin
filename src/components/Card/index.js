@@ -4,8 +4,7 @@ import { NoImage } from "../../assets"
 import ButtonDelete from "./ButtonDelete"
 import {Button} from "react-bootstrap";
 
-const Card = ({item, handleDelete}) => {
-
+const Card = ({ item, handleDelete }) => {
   const formatCurrency = (number) => {
     let fNumber = number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
     return !!fNumber ? "Rp. " + fNumber : "Harga tidak tersedia"
@@ -17,7 +16,9 @@ const Card = ({item, handleDelete}) => {
         <img className="card-image-top" src={item.image ? item.image : NoImage} alt="car" style={{ width: '100%' }} />
         <div className="card-body" style={{ height: 'auto' }}>
           <h5 class="card-title">{item.name}</h5>
-          <h6 class="card-subtitle mb-2">{`${formatCurrency(item.price)} / hari`}</h6>
+          <h6 class="card-subtitle mb-2">{`${formatCurrency(
+            item.price
+          )} / hari`}</h6>
           <p class="card-text">{item.category}</p>
           <p class="card-text">Updated at {item.updatedAt}</p>
             <div className="row w-100">
