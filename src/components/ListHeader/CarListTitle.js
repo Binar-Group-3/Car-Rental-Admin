@@ -1,10 +1,12 @@
 import React from "react";
 import {Button} from "react-bootstrap";
+import CarBreadcrumb from "./CarBreadcrumb";
 
 const CarListTitle = () => {
     return (
         <div className="row w-100">
-            <div className="col-6">
+                <CarBreadcrumb />
+            <div id = "list-car" className="col-6">
                 <h1 className='mx-3 my-3'>List Car</h1>
             </div>
             <div className="col-6">
