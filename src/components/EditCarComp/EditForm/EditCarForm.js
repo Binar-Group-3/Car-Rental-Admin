@@ -8,8 +8,6 @@ const EditCarForm = (props) => {
 
   const { setCarName, setCarPrice, onImageUpload, setCarCategory } = props
 
-  console.log(car)
-
   return (
     <section className="edit-car-form__container">
       <form>
@@ -20,7 +18,7 @@ const EditCarForm = (props) => {
           <input
             onChange={(e) => setCarName(e.target.value)}
             type="text"
-            // placeholder={car.name}
+            placeholder={car.name}
             required
           />
         </div>
@@ -33,7 +31,7 @@ const EditCarForm = (props) => {
             type="number"
             min="0"
             required
-            // placeholder={car.price}
+            placeholder={car.price}
           />
         </div>
         <div className="form-upload">

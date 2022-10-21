@@ -21,7 +21,7 @@ export const handleCar = () => (dispatch) => {
 }
 export const getCar = (id) => (dispatch) => {
   axios
-    .get(`https://bootcamp-rent-car.herokuapp.com/admin/car/${id}`, {
+    .get(`https://bootcamp-rent-cars.herokuapp.com/admin/car/${id}`, {
       headers: {
         access_token:
           "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhbHNhQHNhbHNhLmNvbSIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTY2NTY3MDM3N30.iR-2vyAeAZX11u7AOKXCgNJYey-_eg58E8zZVgu4Z7Y",
