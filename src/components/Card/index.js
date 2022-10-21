@@ -22,7 +22,7 @@ const Card = ({item, handleDelete}) => {
           <p class="card-text">Updated at {item.updatedAt}</p>
           <div class="d-flex justify-content-between">
             <ButtonDelete carId={item.id} onClick={handleDelete} />
-            <Link to={`edit-car/${item.id}`}>
+            <Link to={`/dashboard/cars/edit-car/${item.id}`}>
               <ButtonEdit />
             </Link>
           </div>
