@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { useTheme } from "@mui/material";
-import { IconButton, Box, Button } from "@mui/material";
+import { IconButton, Box } from "@mui/material";
 import { KeyboardArrowLeft, KeyboardArrowRight } from "@mui/icons-material";
 import PropTypes from "prop-types";
 import {
