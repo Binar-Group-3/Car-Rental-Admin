@@ -4,6 +4,11 @@ import { NoImage } from "../../assets"
 import ButtonDelete from "./ButtonDelete"
 import {Button} from "react-bootstrap";
 import moment from "moment"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faEdit } from "@fortawesome/free-solid-svg-icons"
+import { library } from "@fortawesome/fontawesome-svg-core"
+
+library.add(faEdit);
 
 const Card = ({ item, handleDelete }) => {
   const formatCurrency = (number) => {
@@ -26,7 +31,7 @@ const Card = ({ item, handleDelete }) => {
                 <div className="col-6">
                     <Link to={`/dashboard/cars/edit-car/${item.id}`}>
                         <Button variant = "success" size = "lg" className="w-100">
-                            Edit
+                          <FontAwesomeIcon icon="edit" /> Edit
                         </Button>
                     </Link>
                 </div>
