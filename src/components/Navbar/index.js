@@ -1,37 +1,55 @@
-import MenuIcon from "@mui/icons-material/Menu";
-import React from "react";
+import MenuIcon from "@mui/icons-material/Menu"
+import React from "react"
 // import Logo from "../../../assets/logo.png";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import { useDispatch, useSelector } from "react-redux";
-import CloseIcon from "@mui/icons-material/Close";
-import { Link } from "react-router-dom";
-import { SwipeableDrawer } from "@mui/material";
-import ArrowDropDownOutlinedIcon from "@mui/icons-material/ArrowDropDownOutlined";
-import { toggleDrawerHandler } from "../../redux/actions/navbarAction";
-import Accordion from "@mui/material/Accordion";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import "./style.scss";
+import Menu from "@mui/material/Menu"
+import MenuItem from "@mui/material/MenuItem"
+import { useDispatch, useSelector } from "react-redux"
+import CloseIcon from "@mui/icons-material/Close"
+import { Link } from "react-router-dom"
+import { SwipeableDrawer } from "@mui/material"
+import ArrowDropDownOutlinedIcon from "@mui/icons-material/ArrowDropDownOutlined"
+import { toggleDrawerHandler } from "../../redux/actions/navbarAction"
+import Accordion from "@mui/material/Accordion"
+import AccordionDetails from "@mui/material/AccordionDetails"
+import AccordionSummary from "@mui/material/AccordionSummary"
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore"
+import "./style.scss"
+import TYPES from "../../redux/types"
 
 const Navbar = ({ handleSidebar, sidebar }) => {
-  const counter = useSelector((state) => state.navbarReducer);
-  console.log(counter);
-  const dispatch = useDispatch();
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
+  const counter = useSelector((state) => state.navbarReducer)
+  console.log(counter)
+  const dispatch = useDispatch()
+  const [anchorEl, setAnchorEl] = React.useState(null)
+  const [searchQuery, setSearchQuery] = React.useState("")
+  const open = Boolean(anchorEl)
   const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
+    setAnchorEl(event.currentTarget)
+  }
   const handleClose = () => {
-    setAnchorEl(null);
-  };
-  const [expanded, setExpanded] = React.useState(false);
+    setAnchorEl(null)
+  }
+  const [expanded, setExpanded] = React.useState(false)
 
   const handleChange = (panel) => (event, isExpanded) => {
-    setExpanded(isExpanded ? panel : false);
-  };
+    setExpanded(isExpanded ? panel : false)
+  }
+
+  // search function
+  const handleQuery = (e) => {
+    setSearchQuery(e.target.value)
+  }
+
+  const handleSearch = (e) => {
+    if (searchQuery.length === 0) {
+      setSearchQuery("")
+    }
+    e.preventDefault()
+    dispatch({
+      type: TYPES.SEARCH_QUERY,
+      payload: searchQuery,
+    })
+  }
 
   return (
     <div className="ikhlas">
@@ -49,7 +67,7 @@ const Navbar = ({ handleSidebar, sidebar }) => {
               sidebar === true ? "translate-x-40" : "translate-x-0"
             }`}
             onClick={() => {
-              dispatch(toggleDrawerHandler(counter.toggleDrawer));
+              dispatch(toggleDrawerHandler(counter.toggleDrawer))
             }}
           >
             <MenuIcon />
@@ -59,7 +77,7 @@ const Navbar = ({ handleSidebar, sidebar }) => {
           </button>
         </div>
         <div className="flex items-center">
-          <div className="sm:flex hidden mx-2">
+          <form className="sm:flex hidden mx-2">
             <div class="absolute pointer-events-none inset-y-0 pl-3 flex items-center">
               <svg
                 class="absolute text-slate-400 h-5 w-5"
@@ -78,11 +96,15 @@ const Navbar = ({ handleSidebar, sidebar }) => {
               id="search"
               type="text"
               placeholder="Search"
+              onChange={handleQuery}
             />
-            <button className="py-2 px-4 bg-transparent font-semibold text-blue-700 shadow-sm sm:text-sm border border-blue-400 rounded-r-md hover:bg-blue-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
+            <button
+              onClick={handleSearch}
+              className="py-2 px-4 bg-transparent font-semibold text-blue-700 shadow-sm sm:text-sm border border-blue-400 rounded-r-md hover:bg-blue-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
+            >
               Search
             </button>
-          </div>
+          </form>
           <div className="relative">
             <button
               className="flex items-center mx-2"
@@ -114,10 +136,10 @@ const Navbar = ({ handleSidebar, sidebar }) => {
               anchor={"left"}
               open={counter.toggleDrawer}
               onClose={() => {
-                dispatch(toggleDrawerHandler(counter.toggleDrawer));
+                dispatch(toggleDrawerHandler(counter.toggleDrawer))
               }}
               onOpen={() => {
-                dispatch(toggleDrawerHandler(counter.toggleDrawer));
+                dispatch(toggleDrawerHandler(counter.toggleDrawer))
               }}
             >
               <div className="w-full">
@@ -125,7 +147,7 @@ const Navbar = ({ handleSidebar, sidebar }) => {
                   <p className="font-bold">BCR</p>
                   <button
                     onClick={() => {
-                      dispatch(toggleDrawerHandler(counter.toggleDrawer));
+                      dispatch(toggleDrawerHandler(counter.toggleDrawer))
                     }}
                   >
                     <CloseIcon />
@@ -186,7 +208,7 @@ const Navbar = ({ handleSidebar, sidebar }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

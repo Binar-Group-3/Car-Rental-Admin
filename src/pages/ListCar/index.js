@@ -11,6 +11,7 @@ import { getCars } from "../../hooks/useFetch"
 const ListCar = () => {
   const dispatch = useDispatch()
   const { dataUser } = useSelector((state) => state)
+  const { searchQuery: name } = useSelector((state) => state.searchQuery)
 
   const [show, setShow] = useState(false)
   const [carId, setCarId] = useState(null)
@@ -29,8 +30,8 @@ const ListCar = () => {
 
   // fetch query
   const { isLoading, data, isPreviousData } = useQuery(
-    ["cars", page, category],
-    () => getCars(page, category),
+    ["cars", name, category, page],
+    () => getCars(name, category, page),
     {
       keepPreviousData: true,
     }
