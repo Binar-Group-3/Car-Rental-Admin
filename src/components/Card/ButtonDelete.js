@@ -1,6 +1,6 @@
 import { Button } from "react-bootstrap"
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-// import { faTrashAlt } from "@fortawesome/free-regular-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faTrashAlt } from "@fortawesome/free-regular-svg-icons"
 
 const ButtonDelete = ({ carId, onClick }) => {
   return (
@@ -12,8 +12,7 @@ const ButtonDelete = ({ carId, onClick }) => {
       size="md"
       className="w-100"
     >
-      {/* <FontAwesomeIcon icon={faTrashAlt} /> */}
-      Delete
+      <FontAwesomeIcon icon={faTrashAlt} /> Delete
     </Button>
   )
 }
