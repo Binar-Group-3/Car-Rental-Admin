@@ -1,0 +1,33 @@
+.car-pagination-container-only {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+.car-pagination-container-only p {
+  /* margin-top: 20px; */
+}
+
+.car-pagination-container-only button {
+  padding: 0 10px;
+  height: 35px;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  color: #fff;
+  border: 1px solid #0d28a6;
+  /* padding: 10px $base-padding * 2; */
+  border-radius: 8px;
+  background-color: #0d28a6;
+
+  /* margin-top: 20px; */
+}
+
+.car-pagination-container-only button[disabled] {
+  background: transparent;
+  color: #0d28a6;
+  opacity: 0.5;
+  cursor: default;
+}
