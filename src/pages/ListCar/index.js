@@ -1,10 +1,12 @@
 import React, { useState } from "react"
+import { useQuery } from "@tanstack/react-query"
 import { useSelector, useDispatch } from "react-redux"
 import { useEffect } from "react"
 import { getData } from "../../redux/actions/dataAction"
 import Card from "../../components/Card"
 import ModalDelete from "../../components/Card/ModalDelete"
 import ListHeader from "../../components/ListHeader"
+import { getCars } from "../../hooks/useFetch"
 
 const ListCar = () => {
   const dispatch = useDispatch()
@@ -12,6 +14,8 @@ const ListCar = () => {
 
   const [show, setShow] = useState(false)
   const [carId, setCarId] = useState(null)
+  const [page, setPage] = useState(1)
+  const [category, setCategory] = useState("")
 
   const modalDeleteClose = () => setShow(false)
   const modalDeleteShow = (id) => {
@@ -23,10 +27,29 @@ const ListCar = () => {
     dispatch(getData())
   }, [])
 
+  // fetch query
+  const { isLoading, data, isPreviousData } = useQuery(
+    ["cars", page, category],
+    () => getCars(page, category),
+    {
+      keepPreviousData: true,
+    }
+  )
+
+  const props = {
+    page,
+    category,
+    setPage,
+    setCategory,
+    data,
+    isLoading,
+    isPreviousData,
+  }
+
   return (
     <>
       <div style={{ height: "auto", overflowX: "hidden" }}>
-        <ListHeader />
+        <ListHeader {...props} />
         <div className="row" style={{ padding: 10 }}>
           {dataUser.data.map((item) => (
             <div
@@ -41,7 +64,7 @@ const ListCar = () => {
                 justifyContent: "center",
               }}
             >
-              <Card item={item} handleDelete={modalDeleteShow} />
+              <Card {...props} item={item} handleDelete={modalDeleteShow} />
             </div>
           ))}
         </div>
