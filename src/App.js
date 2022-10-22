@@ -10,6 +10,7 @@ import {
   Route,
 } from "react-router-dom"
 import Template from "./pages/Template"
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -31,11 +32,14 @@ const router = createBrowserRouter(
   )
 )
 
+const queryClient = new QueryClient()
+
 function App() {
   return (
     <div>
-      <RouterProvider router={router} />
-      {/* <Routes>
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+        {/* <Routes>
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="cars" element={<ListCar />} />
         page buat add car ada di sini
@@ -43,6 +47,7 @@ function App() {
         <Route path="login" element={<LoginPage />} />
         <Route path="*" element={<Navigate to="dashboard" replace />} />
       </Routes> */}
+      </QueryClientProvider>
     </div>
   )
 }
