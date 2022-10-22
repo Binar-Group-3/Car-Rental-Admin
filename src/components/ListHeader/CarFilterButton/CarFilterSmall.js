@@ -1,13 +1,21 @@
-import React from "react";
+const CarFilterSmall = (props) => {
+  const { setCategory, buttonFilter, setButtonFilter } = props
 
-const CarFilterSmall = () => {
-    return (
-        <>
-            <button className="btn btn-outline-primary w-100">
-                Small
-            </button>
-        </>
-    )
+  const handleShowSmall = () => {
+    setCategory("small")
+    setButtonFilter("small")
+  }
+
+  return (
+    <>
+      <button
+        className="btn btn-outline-primary w-100"
+        onClick={handleShowSmall}
+      >
+        Small
+      </button>
+    </>
+  )
 }
 
-export default CarFilterSmall;
+export default CarFilterSmall
