@@ -1,0 +1,86 @@
+.image-car {
+    width: 270px;
+    height: 160px;
+    left: 16px;
+    top: 31px;
+}
+
+.image-layout {
+    width: 303px;
+    height: 222px;
+    left: 0px;
+    top: 0px;
+
+    background: #FFFFFF;
+    border-radius: 8px;
+}
+
+.car-name {   
+    width: 303px;
+    height: 20px;
+
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+
+    color: #000000;
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.car-price {
+    width: 303px;
+    height: 24px;
+
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+
+    color: #000000;
+
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.car-category {
+    width: 275px;
+    height: 20px;
+
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+
+    color: #000000;
+
+    flex: none;
+    order: 1;
+    flex-grow: 1;
+}
+
+.car-updated {
+    width: 275px;
+    height: 20px;
+
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+
+    color: #000000;
+
+    flex: none;
+    order: 1;
+    flex-grow: 1;
+}
