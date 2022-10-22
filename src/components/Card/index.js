@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import { NoImage } from "../../assets"
 import ButtonDelete from "./ButtonDelete"
 import {Button} from "react-bootstrap";
+import moment from "moment"
 
 const Card = ({ item, handleDelete }) => {
   const formatCurrency = (number) => {
@@ -20,7 +21,7 @@ const Card = ({ item, handleDelete }) => {
             item.price
           )} / hari`}</h6>
           <p class="card-text">{item.category}</p>
-          <p class="card-text">Updated at {item.updatedAt}</p>
+          <p class="card-text">Updated at {moment(item.updatedAt).format("D MMM YYYY, HH.mm")}</p>
             <div className="row w-100">
                 <div className="col-6">
                     <Link to={`/dashboard/cars/edit-car/${item.id}`}>
