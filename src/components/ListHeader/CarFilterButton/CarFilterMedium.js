@@ -1,13 +1,21 @@
-import React from "react";
+const CarFilterMedium = (props) => {
+  const { setCategory, buttonFilter, setButtonFilter } = props
 
-const CarFilterMedium = () => {
-    return (
-        <>
-            <button className="btn btn-outline-primary w-100">
-                Medium
-            </button>
-        </>
-    )
+  const handleShowMedium = () => {
+    setCategory("medium")
+    setButtonFilter("medium")
+  }
+
+  return (
+    <>
+      <button
+        className="btn btn-outline-primary w-100"
+        onClick={handleShowMedium}
+      >
+        Medium
+      </button>
+    </>
+  )
 }
 
-export default CarFilterMedium;
+export default CarFilterMedium
