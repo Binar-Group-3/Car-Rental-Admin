@@ -39,13 +39,17 @@ const ModalDelete = ({show, handleClose, carId}) => {
                 <p style = {{ fontFamily: "Arial", fontStyle: "normal" }}>
                 Setelah dihapus, data mobil tidak dapat dikembalikan, Yakin ingin menghapus?
                 </p>
-                <div className="modal-button">
-                <Button onClick={() => handleDelete(carId)} className="mx-2">
-                    Ya
-                </Button>
-                <Button onClick={handleClose} variant="outline-primary" className="mx-2">
-                    Tidak
-                </Button>
+                <div className="row w-75">
+                    <div className="col-6">
+                        <Button onClick={() => handleDelete(carId)} variant = "default" size="md" style = {{ color: "white", background: "#0D28A6" }} className="mx-2 w-100">
+                            Ya
+                        </Button>
+                    </div>
+                    <div className="col-6">
+                        <Button onClick={handleClose} variant="default" size = "md" style = {{ color: "#0D28A6", borderColor: "#0D28A6" }} className="mx-2 w-100">
+                            Tidak
+                        </Button>
+                    </div>
                 </div>
             </Modal.Body>
         </Modal>
