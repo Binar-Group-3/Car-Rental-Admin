@@ -9,7 +9,7 @@ const CarFilterSmall = (props) => {
   return (
     <>
       <button
-        className="btn btn-outline-primary w-100"
+        className={buttonFilter == "small" ? "btn btn-primary w-100": "btn btn-outline-primary w-100"}
         onClick={handleShowSmall}
       >
         Small
