@@ -18,22 +18,22 @@ const Card = ({ item, handleDelete }) => {
 
   return (
     <>
-      <div className="card" style={{ width: '100%', maxwidth: 351, height: 'auto' }} >
-        <img className="card-image-top" src={item.image ? item.image : NoImage} alt="car" style={{ width: '100%' }} />
+      <div className="card shadow m-3" style={{ width: '100%', maxWidth: 351, height: 'auto' }} >
+        <div className="d-flex justify-content-center w-100">
+          <img className="card-image-top" src={item.image ? item.image : NoImage} alt="car" style={{ maxHeight: 300, width: '100%' }} />
+        </div>
         <div className="card-body" style={{ height: 'auto' }}>
-          <h5 class="card-title">{item.name}</h5>
-          <h6 class="card-subtitle mb-2">{`${formatCurrency(
-            item.price
-          )} / hari`}</h6>
-          <p class="card-text"><FontAwesomeIcon icon={faUser} style={{marginRight: 10}} />{item.category}</p>
-          <p class="card-text"><FontAwesomeIcon icon={faClockFour} style={{marginRight: 10}}/>Updated at {moment(item.updatedAt).format("D MMM YYYY, HH.mm")}</p>
+          <h5 className="card-title font-weight-normal mb-1" style={{fontSize: 14}}>{item.name}</h5>
+          <strong><p className="mb-2" style={{fontSize: 16}}>{`${formatCurrency(item.price)} / hari`}</p></strong>
+          <p className="card-text" style={{fontSize: 14}}><FontAwesomeIcon icon={faUser} style={{marginRight: 10}} /> {item.category}</p>
+          <p className="card-text" style={{fontSize: 14}}><FontAwesomeIcon icon={faClockFour} style={{marginRight: 10}} /> Updated at {moment(item.updatedAt).format("D MMM YYYY, HH.mm")}</p>
           <div className="row w-100">
             <div className="col-6">
               <ButtonDelete carId={item.id} onClick={handleDelete} />
             </div>
             <div className="col-6">
               <Link to={`/dashboard/cars/edit-car/${item.id}`}>
-                <Button variant="success" size="lg" className="w-100">
+                <Button variant="success" size="md" className="w-100">
                   <FontAwesomeIcon icon="edit" /> Edit
                 </Button>
               </Link>
