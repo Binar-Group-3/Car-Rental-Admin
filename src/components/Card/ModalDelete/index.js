@@ -35,8 +35,8 @@ const ModalDelete = ({show, handleClose, carId}) => {
         <Modal show={show} onHide={handleClose}>
             <Modal.Body className="d-flex justify-content-center align-items-center flex-column p-5">
                 <img src={ModalImg} alt="car" />
-                <h3>Menghapus Data Mobil?</h3>
-                <p>
+                <h3 style={{ fontFamily: "Arial", fontWeight:700, fontStyle: "normal" }}>Menghapus Data Mobil?</h3>
+                <p style = {{ fontFamily: "Arial", fontStyle: "normal" }}>
                 Setelah dihapus, data mobil tidak dapat dikembalikan, Yakin ingin menghapus?
                 </p>
                 <div className="modal-button">
