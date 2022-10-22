@@ -1,4 +1,5 @@
 import React from "react"
+import "./CarFilterButton.css"
 
 const CarFilterAll = (props) => {
   const { setCategory, buttonFilter, setButtonFilter } = props
@@ -10,7 +11,7 @@ const CarFilterAll = (props) => {
 
   return (
     <>
-      <button className={buttonFilter == "all" ? "btn btn-primary w-100": "btn btn-outline-primary w-100"} onClick={handleShowAll}>
+      <button className={buttonFilter == "all" ? "car-filter-active": "car-filter-disabled"} onClick={handleShowAll}>
         All
       </button>
     </>
