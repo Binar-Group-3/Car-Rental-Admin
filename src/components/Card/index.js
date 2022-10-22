@@ -5,10 +5,10 @@ import ButtonDelete from "./ButtonDelete"
 import {Button} from "react-bootstrap";
 import moment from "moment"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faEdit } from "@fortawesome/free-solid-svg-icons"
+import { faEdit, faUser, faClockFour } from "@fortawesome/free-solid-svg-icons"
 import { library } from "@fortawesome/fontawesome-svg-core"
 
-library.add(faEdit);
+library.add(faEdit, faUser);
 
 const Card = ({ item, handleDelete }) => {
   const formatCurrency = (number) => {
@@ -25,8 +25,8 @@ const Card = ({ item, handleDelete }) => {
           <h6 class="card-subtitle mb-2">{`${formatCurrency(
             item.price
           )} / hari`}</h6>
-          <p class="card-text">{item.category}</p>
-          <p class="card-text">Updated at {moment(item.updatedAt).format("D MMM YYYY, HH.mm")}</p>
+          <p class="card-text"><FontAwesomeIcon icon={faUser} style={{marginRight: 10}} />{item.category}</p>
+          <p class="card-text"><FontAwesomeIcon icon={faClockFour} style={{marginRight: 10}}/>Updated at {moment(item.updatedAt).format("D MMM YYYY, HH.mm")}</p>
             <div className="row w-100">
                 <div className="col-6">
                     <Link to={`/dashboard/cars/edit-car/${item.id}`}>
