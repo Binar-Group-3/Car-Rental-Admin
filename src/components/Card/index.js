@@ -27,18 +27,18 @@ const Card = ({ item, handleDelete }) => {
           )} / hari`}</h6>
           <p class="card-text"><FontAwesomeIcon icon={faUser} style={{marginRight: 10}} />{item.category}</p>
           <p class="card-text"><FontAwesomeIcon icon={faClockFour} style={{marginRight: 10}}/>Updated at {moment(item.updatedAt).format("D MMM YYYY, HH.mm")}</p>
-            <div className="row w-100">
-                <div className="col-6">
-                    <Link to={`/dashboard/cars/edit-car/${item.id}`}>
-                        <Button variant = "success" size = "lg" className="w-100">
-                          <FontAwesomeIcon icon="edit" /> Edit
-                        </Button>
-                    </Link>
-                </div>
-                <div className="col-6">
-                    <ButtonDelete carId={item.id} onClick={handleDelete} />
-                </div>
+          <div className="row w-100">
+            <div className="col-6">
+              <ButtonDelete carId={item.id} onClick={handleDelete} />
             </div>
+            <div className="col-6">
+              <Link to={`/dashboard/cars/edit-car/${item.id}`}>
+                <Button variant="success" size="lg" className="w-100">
+                  <FontAwesomeIcon icon="edit" /> Edit
+                </Button>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </>
