@@ -9,7 +9,7 @@ const CarFilterMedium = (props) => {
   return (
     <>
       <button
-        className="btn btn-outline-primary w-100"
+        className={buttonFilter == "medium" ? "car-filter-active": "car-filter-disabled"}
         onClick={handleShowMedium}
       >
         Medium

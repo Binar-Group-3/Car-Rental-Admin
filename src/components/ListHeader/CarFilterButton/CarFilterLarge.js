@@ -9,7 +9,7 @@ const CarFilterLarge = (props) => {
   return (
     <>
       <button
-        className="btn btn-outline-primary w-100"
+        className={buttonFilter == "large" ? "car-filter-active": "car-filter-disabled"}
         onClick={handleShowLarge}
       >
         Large
