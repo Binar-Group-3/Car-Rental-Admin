@@ -1,13 +1,20 @@
-import React from "react";
+import React from "react"
 
-const CarFilterAll = () => {
-    return (
-        <>
-            <button className="btn btn-primary w-100">
-                All
-            </button>
-        </>
-    )
+const CarFilterAll = (props) => {
+  const { setCategory, buttonFilter, setButtonFilter } = props
+
+  const handleShowAll = () => {
+    setCategory("")
+    setButtonFilter("all")
+  }
+
+  return (
+    <>
+      <button className="btn btn-primary w-100" onClick={handleShowAll}>
+        All
+      </button>
+    </>
+  )
 }
 
-export default CarFilterAll;
+export default CarFilterAll
