@@ -33,7 +33,7 @@ const ChartComp = () => {
   let monthArray = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
     "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-  const sorted = monthOnly.sort((a, b) => {
+  const sortedData = monthOnly.sort((a, b) => {
     const [monthA, yearA] = a.split(' '),
       [monthB, yearB] = b.split(' ');
     if (yearA === yearB)
@@ -45,7 +45,7 @@ const ChartComp = () => {
     <div className="chart_component_style">
       <div className="action-button">
         <select onChange={(e) => setValue(e.target.value)} className="dropdown_button">
-          {sorted.map((item) => (
+          {sortedData.map((item) => (
             <option value={item}>{item}</option>
           ))}
         </select>
