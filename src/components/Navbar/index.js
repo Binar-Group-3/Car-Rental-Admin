@@ -15,6 +15,7 @@ import AccordionSummary from "@mui/material/AccordionSummary"
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore"
 import "./style.scss"
 import TYPES from "../../redux/types"
+import Logo from './../../assets/Rectangle 62.svg'
 
 const Navbar = ({ handleSidebar, sidebar }) => {
   const counter = useSelector((state) => state.navbarReducer)
@@ -60,7 +61,7 @@ const Navbar = ({ handleSidebar, sidebar }) => {
           }`}
         >
           <div className="md:flex w-40 hidden items-center pl-4">
-            {/* <img src={Logo} alt="logo" /> */}
+            <img src={Logo} alt="logo" />
           </div>
           <button
             className={`pl-4 md:hidden block ${
@@ -100,7 +101,7 @@ const Navbar = ({ handleSidebar, sidebar }) => {
             />
             <button
               onClick={handleSearch}
-              className="py-2 px-4 bg-transparent font-semibold text-blue-700 shadow-sm sm:text-sm border border-blue-400 rounded-r-md hover:bg-blue-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
+              className="py-2 px-4 font-semibold text-blue-700 shadow-sm sm:text-sm border border-blue-400 rounded-r-md hover:bg-blue-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
             >
               Search
             </button>
