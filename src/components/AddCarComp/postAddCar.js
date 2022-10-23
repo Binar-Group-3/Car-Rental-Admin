@@ -10,10 +10,10 @@ export const postAddCar = (data, navigate) => {
       },
     })
     .then((res) => {
-      if (res.status === 200) {
+      if (res.status === 201) {
         swal({
           title: "Saved!",
-          text: "Berhasil Mengubah Data",
+          text: "Berhasil Menambah Data",
           icon: "success",
           timer: 2000,
         })
