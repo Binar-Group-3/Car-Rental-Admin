@@ -12,6 +12,7 @@ import {
 import Template from "./pages/Template"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import AddPage from "./pages/AddPage"
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage"
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -29,6 +30,12 @@ const router = createBrowserRouter(
         <Route path="cars/edit-car/:id" element={<EditPage />} />
       </Route>
         <Route path="login" element={<LoginPage />} />
+        <Route
+            path="*"
+            element={
+              <NotFoundPage />
+            }
+          />
     </Route>
   )
 )
