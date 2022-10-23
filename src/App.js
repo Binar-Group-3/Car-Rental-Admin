@@ -26,8 +26,8 @@ const router = createBrowserRouter(
         <Route path="cars" element={<ListCar />} />
         {/* page buat add car ada di sini */}
         <Route path="cars/edit-car/:id" element={<EditPage />} />
-        <Route path="login" element={<LoginPage />} />
       </Route>
+        <Route path="login" element={<LoginPage />} />
     </Route>
   )
 )
@@ -49,7 +49,7 @@ function App() {
       </Routes> */}
       </QueryClientProvider>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
