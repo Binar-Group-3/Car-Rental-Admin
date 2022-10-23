@@ -7,6 +7,7 @@ import Card from "../../components/Card"
 import ModalDelete from "../../components/Card/ModalDelete"
 import ListHeader from "../../components/ListHeader"
 import { getCars } from "../../hooks/useFetch"
+import CardLoading from "../../components/Card/CardLoading/CardLoading"
 
 const ListCar = () => {
   const dispatch = useDispatch()
@@ -68,6 +69,7 @@ const ListCar = () => {
               <Card {...props} item={item} handleDelete={modalDeleteShow} />
             </div>
           ))}
+        {isLoading && <CardLoading />}
         </div>
       </div>
       <ModalDelete show={show} handleClose={modalDeleteClose} carId={carId} />
