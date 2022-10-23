@@ -20,7 +20,7 @@ const ChartComp = () => {
   }, []);
 
   // FOR GET MONTH ONLY
-  const monthData = chartData.map((item) => moment(item, "D MMM").format("MMM"))
+  const monthData = chartData.map((item) => moment(item, "D MMM YYYY").format("MMM YYYY"))
   const monthOnly = monthData.filter((element, index) => {
     return monthData.indexOf(element) === index;
   });
@@ -33,8 +33,8 @@ const ChartComp = () => {
     <div className="chart_component_style">
       <div className="action-button">
         <select onChange={(e) => setValue(e.target.value)} className="dropdown_button">
-          {monthOnly.map((item) => (
-            <option value={item}>{item} - 2022</option>
+          {sorted.map((item) => (
+            <option value={item}>{item}</option>
           ))}
         </select>
         <button onClick={handleDropdownDate} className="go_button">Go</button>

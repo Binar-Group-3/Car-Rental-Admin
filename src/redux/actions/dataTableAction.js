@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const getDataOrder = () => (dispatch) => {
   axios
-    .get("https://bootcamp-rent-cars.herokuapp.com/admin/v2/order", {
+    .get("https://bootcamp-rent-cars.herokuapp.com/admin/v2/order?pageSize=1000", {
       headers: {
         "Content-Type": "Application/json",
         "accept": "Application/json",
