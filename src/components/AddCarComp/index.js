@@ -32,7 +32,7 @@ const AddCarComp = () => {
                 <AddHeader />
                 <div className="add-car-comp__form">
                     <AddCarForm {...props}/>
-                    <AddCarButton />
+                    <AddCarButton {...props}/>
                 </div>
             </main>
         </section>
