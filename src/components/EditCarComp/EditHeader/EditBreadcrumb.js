@@ -10,7 +10,7 @@ const EditBreadcrumb = () => {
         <p>Cars</p>
         <i className="uil uil-angle-right-b"></i>
         <div className="link">
-          <Link to="/cars">List Car</Link>
+          <Link to="/dashboard/cars">List Car</Link>
         </div>
         <i className="uil uil-angle-right-b"></i>
         <div className="edit-link">

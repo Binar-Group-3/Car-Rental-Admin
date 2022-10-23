@@ -49,7 +49,7 @@ const Card = ({ item, handleDelete }) => {
             <FontAwesomeIcon icon={faClockFour} style={{ marginRight: 10 }} />{" "}
             Updated at {moment(item.updatedAt).format("D MMM YYYY, HH.mm")}
           </p>
-          <div className="row w-100">
+          <div className="row gx-2">
             <div className="col-6">
               <ButtonDelete carId={item.id} onClick={handleDelete} />
             </div>
