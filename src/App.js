@@ -13,6 +13,7 @@ import Template from "./pages/Template";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import AddPage from "./pages/AddPage";
 import ErrorPage from "./pages/ErrorPage";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -20,8 +21,6 @@ const router = createBrowserRouter(
       <Route
         path="/dashboard"
         element={<Template />}
-        // loader={rootLoader}
-        // action={rootAction}
         errorElement={<ErrorPage />}
       >
         <Route path="" element={<Dashboard />} />
@@ -30,6 +29,7 @@ const router = createBrowserRouter(
         <Route path="cars/edit-car/:id" element={<EditPage />} />
       </Route>
       <Route path="login" element={<LoginPage />} />
+      <Route path="*" element={<NotFoundPage />} />
     </Route>
   )
 );
@@ -41,14 +41,6 @@ function App() {
     <div>
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
-        {/* <Routes>
-        <Route path="dashboard" element={<Dashboard />} />
-        <Route path="cars" element={<ListCar />} />
-        page buat add car ada di sini
-        <Route path="cars/edit-car/:id" element={<EditPage />} />
-        <Route path="login" element={<LoginPage />} />
-        <Route path="*" element={<Navigate to="dashboard" replace />} />
-      </Routes> */}
       </QueryClientProvider>
     </div>
   );

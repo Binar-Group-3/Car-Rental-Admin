@@ -1,5 +1,4 @@
 import { Link, NavLink } from "react-router-dom";
-// import MiniLogo from "../../../assets/mini_logo.svg";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
 import React from "react";
