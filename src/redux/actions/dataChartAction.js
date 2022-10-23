@@ -4,7 +4,7 @@ import axios from "axios";
 
 export const getDataChart = (value) => (dispatch) => {
     axios
-        .get("https://bootcamp-rent-cars.herokuapp.com/admin/v2/order", {
+        .get("https://bootcamp-rent-cars.herokuapp.com/admin/v2/order?pageSize=1000", {
             headers: {
                 "Content-Type": "application/json",
                 "accept": "Application/json",
@@ -13,9 +13,8 @@ export const getDataChart = (value) => (dispatch) => {
             },
         })
         .then((res) => {
-            const datas = res.data
-            const dateData = datas.orders.map(
-                (item) => moment(item.start_rent_at).format("D MMM")
+            const dateData = res.data.orders.map(
+                (item) => moment(item.start_rent_at).format("D MMM YYYY")
             );
             const dataFilter = dateData.filter((item) => item.includes(value));
             const dateOnly = dataFilter.map((item) =>
