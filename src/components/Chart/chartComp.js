@@ -29,6 +29,18 @@ const ChartComp = () => {
     getData(value)
   }
 
+  // FOR SORTING DROPDOWN
+  let monthArray = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+  const sorted = monthOnly.sort((a, b) => {
+    const [monthA, yearA] = a.split(' '),
+      [monthB, yearB] = b.split(' ');
+    if (yearA === yearB)
+      return monthArray.indexOf(monthA) - monthArray.indexOf(monthB);
+    return +yearA - +yearB
+  })
+
   return (
     <div className="chart_component_style">
       <div className="action-button">
