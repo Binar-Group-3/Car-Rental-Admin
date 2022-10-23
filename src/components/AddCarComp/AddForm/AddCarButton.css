@@ -1,7 +1,6 @@
 .add-car-button {
     display: flex;
     gap: 1rem;
-    margin-bottom: 2rem;
   }
   
 .add-car-button-save button {
