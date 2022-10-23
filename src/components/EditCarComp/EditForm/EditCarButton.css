@@ -1,7 +1,6 @@
 .edit-car-button {
   display: flex;
   gap: 1rem;
-  margin-bottom: 2rem;
 }
 
 .edit-car-button-save button {

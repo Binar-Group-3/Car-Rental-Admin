@@ -63,6 +63,14 @@ const AddCarForm = (props) => {
                         <option value="large">Large</option>
                         </select>
                     </div>
+                    <div>
+                        <p>Created at</p>
+                        <small>-</small>
+                    </div>
+                    <div>
+                        <p>Updated at</p>
+                        <small>-</small>
+                    </div>
                 </form>
           </section>
     )
