@@ -1,0 +1,10 @@
+.add-title {
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  
+.add-title__container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}  
