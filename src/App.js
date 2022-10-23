@@ -17,7 +17,7 @@ import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" errorElement={<ErrorPage />}>
+    <Route errorElement={<ErrorPage />}>
       <Route
         path="/dashboard"
         element={<Template />}

@@ -1,33 +1,33 @@
-import React, { useState } from "react"
-import { useQuery } from "@tanstack/react-query"
-import { useSelector, useDispatch } from "react-redux"
-import { useEffect } from "react"
-import { getData } from "../../redux/actions/dataAction"
-import Card from "../../components/Card"
-import ModalDelete from "../../components/Card/ModalDelete"
-import ListHeader from "../../components/ListHeader"
-import { getCars } from "../../hooks/useFetch"
-import CardLoading from "../../components/Card/CardLoading/CardLoading"
+import React, { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { getData } from "../../redux/actions/dataAction";
+import Card from "../../components/Card";
+import ModalDelete from "../../components/Card/ModalDelete";
+import ListHeader from "../../components/ListHeader";
+import { getCars } from "../../hooks/useFetch";
+import CardLoading from "../../components/Card/CardLoading/CardLoading";
 
 const ListCar = () => {
-  const dispatch = useDispatch()
-  const { dataUser } = useSelector((state) => state)
-  const { searchQuery: name } = useSelector((state) => state.searchQuery)
+  const dispatch = useDispatch();
+  const { dataUser } = useSelector((state) => state);
+  const { searchQuery: name } = useSelector((state) => state.searchQuery);
 
-  const [show, setShow] = useState(false)
-  const [carId, setCarId] = useState(null)
-  const [page, setPage] = useState(1)
-  const [category, setCategory] = useState("")
+  const [show, setShow] = useState(false);
+  const [carId, setCarId] = useState(null);
+  const [page, setPage] = useState(1);
+  const [category, setCategory] = useState("");
 
-  const modalDeleteClose = () => setShow(false)
+  const modalDeleteClose = () => setShow(false);
   const modalDeleteShow = (id) => {
-    setShow(true)
-    setCarId(id)
-  }
+    setShow(true);
+    setCarId(id);
+  };
 
   useEffect(() => {
-    dispatch(getData())
-  }, [])
+    dispatch(getData());
+  }, []);
 
   // fetch query
   const { isLoading, data, isPreviousData } = useQuery(
@@ -36,7 +36,7 @@ const ListCar = () => {
     {
       keepPreviousData: true,
     }
-  )
+  );
 
   const props = {
     page,
@@ -46,10 +46,10 @@ const ListCar = () => {
     data,
     isLoading,
     isPreviousData,
-  }
+  };
 
   return (
-    <>
+    <React.Suspense fallback={<p>Loading application...</p>}>
       <div style={{ height: "auto", overflowX: "hidden" }}>
         <ListHeader {...props} />
         <div className="row" style={{ padding: 10 }}>
@@ -69,12 +69,12 @@ const ListCar = () => {
               <Card {...props} item={item} handleDelete={modalDeleteShow} />
             </div>
           ))}
-        {isLoading && <CardLoading />}
+          {isLoading && <CardLoading />}
         </div>
       </div>
       <ModalDelete show={show} handleClose={modalDeleteClose} carId={carId} />
-    </>
-  )
-}
+    </React.Suspense>
+  );
+};
 
-export default ListCar
+export default ListCar;
