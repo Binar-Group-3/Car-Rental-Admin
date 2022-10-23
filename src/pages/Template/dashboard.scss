@@ -1,0 +1,20 @@
+.container-dasboard__ {
+  margin-top: 4rem /* 64px */;
+  height: 200vh;
+  --tw-bg-opacity: 1;
+  // background-color: rgb(226 232 240 / var(--tw-bg-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+@media (min-width: 768px) {
+  .container-dasboard__on {
+    margin-left: 5rem /* 80px */;
+  }
+}
+@media (min-width: 768px) {
+  .container-dasboard__off {
+    margin-left: 15rem /* 240px */;
+  }
+}
