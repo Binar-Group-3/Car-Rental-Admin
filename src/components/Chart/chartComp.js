@@ -46,7 +46,7 @@ const ChartComp = () => {
       <div className="action-button">
         <select onChange={(e) => setValue(e.target.value)} className="dropdown_button">
           {sortedData.map((item) => (
-            <option value={item}>{item}</option>
+            <option>{item}</option>
           ))}
         </select>
         <button onClick={handleDropdownDate} className="go_button">Go</button>
