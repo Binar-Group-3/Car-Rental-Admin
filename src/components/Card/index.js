@@ -12,10 +12,10 @@ import "./CardContent.css"
 library.add(faEdit, faUser)
 
 const Card = ({ item, handleDelete }) => {
-  const formatCurrency = (number) => {
-    let fNumber = number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
-    return !!fNumber ? "Rp. " + fNumber : "Harga tidak tersedia"
-  }
+  const formatCurrency = new Intl.NumberFormat ('en-Us', {
+    style: 'currency',
+    currency: 'IDR'
+  })
 
   return (
     <>
@@ -39,7 +39,7 @@ const Card = ({ item, handleDelete }) => {
             <p
               className="car-prize"
               style={{ fontSize: 16 }}
-            >{`${formatCurrency(item.price)} / hari`}</p>
+            >{`${formatCurrency.format(item.price)} / hari`}</p>
           </strong>
           <p className="car-category" style={{ fontSize: 14 }}>
             <FontAwesomeIcon icon={faUser} style={{ marginRight: 10 }} />{" "}
