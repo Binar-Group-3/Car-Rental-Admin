@@ -1,0 +1,38 @@
+.edit-car-button {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.edit-car-button-save button {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  color: #fff;
+  border: 1px solid #0d28a6;
+  padding: 10px 20px;
+  border-radius: 4px;
+  background-color: #0d28a6;
+}
+
+.edit-car-button-save button:hover {
+  background-color: #fff;
+  border: 1px solid #0d28a6;
+  color: #0d28a6;
+}
+
+.edit-car-button-cancel button {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  color: #0d28a6;
+  border: 1px solid #0d28a6;
+  padding: 10px 20px;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.edit-car-button-cancel button:hover {
+  background-color: #0d28a6;
+  color: #fff;
+}

@@ -1,0 +1,122 @@
+.dashboard_style {
+  * {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+  }
+
+  .container-dashboard {
+    max-width: 1100px !important;
+    margin: 0 auto !important;
+  }
+
+  .container-dashboard h1 {
+    display: flex;
+    margin-bottom: 24px;
+    width: 105px;
+    height: 30px;
+    font-family: "Arial";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .component_title {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    margin-bottom: 18px !important;
+  }
+
+  .component_title img {
+    width: 5px;
+    height: 20px;
+  }
+
+  .component_title h2 {
+    font-family: "Arial";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .table-component {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 1px;
+    width: 1100px;
+    height: 494px;
+  }
+
+  #table-dashboard {
+    margin-top: 84px !important;
+  }
+
+  #table-dashboard h1 {
+    margin-bottom: 24px !important;
+  }
+
+  #chart-dashboard h3 {
+    font-family: "Arial";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 8px;
+  }
+
+  .breadcrumb-dashboard {
+    display: flex;
+    justify-content: space-between;
+    width: 146px;
+    gap: 10px;
+    margin-top: 33px;
+  }
+
+  .breadcrumb-dashboard h1 {
+    font-family: "Arial";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .breadcrumb-dashboard a {
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 18px;
+    text-decoration: none;
+    color: #222222;
+  }
+
+  .breadcrumb-scrolled {
+    display: flex;
+    justify-content: space-between;
+    width: 146px;
+    gap: 10px;
+    margin-top: 33px;
+  }
+
+  .breadcrumb-scrolled h1 {
+    font-family: "Arial";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .breadcrumb-scrolled a {
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    text-decoration: none;
+    color: #222222;
+  }
+}

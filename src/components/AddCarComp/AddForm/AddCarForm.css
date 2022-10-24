@@ -1,0 +1,35 @@
+.add-car-form__container {
+    width: 100%;
+    height: 318px;
+    background: white;
+    padding: 2rem;
+  }
+  
+.add-car-form__container div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 3rem;
+}
+  
+.add-car-form__container label,
+.add-car-form__container p {
+    width: 200px;
+}
+  
+.add-car-form__container input {
+    width: 350px;
+    height: 35px;
+    border: 1px solid #d0d0d0;
+    border-radius: 2px;
+    padding: 0 1rem;
+}
+  
+.add-car-form__container select {
+    width: 385px;
+    height: 35px;
+    border: 1px solid #d0d0d0;
+    border-radius: 2px;
+    padding: 0 1rem;
+}
+  

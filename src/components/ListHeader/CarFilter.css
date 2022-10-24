@@ -1,0 +1,11 @@
+.car-filter-container-only {
+  display: flex;
+  gap: 1rem;
+  margin-top: 20px;
+}
+
+.car-filter-container-only .car-filter-only {
+  display: flex;
+  gap: 1rem;
+  margin-top: 20px;
+}

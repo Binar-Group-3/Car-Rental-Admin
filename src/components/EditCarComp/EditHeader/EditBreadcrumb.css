@@ -1,0 +1,18 @@
+.edit-breadcrumb {
+  width: 500px;
+}
+
+.edit-breadcrumb-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.edit-breadcrumb-container p {
+  font-weight: 600;
+}
+
+.edit-breadcrumb-container div > * {
+  color: rgb(45, 109, 206);
+}

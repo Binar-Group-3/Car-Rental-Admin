@@ -1,0 +1,15 @@
+.center-xy {
+  // width: inherit;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.not-found-container {
+  width: 100%;
+}
+
+.copy-container {
+  text-align: center;
+}

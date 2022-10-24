@@ -1,0 +1,77 @@
+.signin {
+  display: flex;
+  height: 100vh;
+}
+
+.signin .left {
+  width: 100%;
+  height: 100%;
+  background-color: #007bff;
+}
+
+.signin .left img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.signin .right {
+  display: flex;
+  flex-direction: column;
+  min-width: 600px;
+}
+
+.signin .right .signin-container {
+  flex-direction: column;
+  margin: auto;
+  width: 370px;
+  gap: 1rem;
+}
+
+.signin .right .signin-container .logo {
+  align-self: flex-start;
+}
+
+.signin .right .signin-container h2 {
+  align-self: flex-start;
+}
+
+.form-login {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+}
+
+.signin-email,
+.signin-password {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-login input {
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  font-weight: 300;
+  padding: 10px;
+  background: #fff;
+}
+
+.form-login .btn-primary {
+  color: #ffffff;
+  background-color: #0d28a6;
+}
+
+.error-login-card {
+  background: #fbe7e9;
+  min-width: 370px;
+  height: 60px;
+  border-radius: 5px;
+}
+
+.error-login-card p {
+  color: #d00c1a;
+  font-size: 11px;
+  padding: 10px;
+}
