@@ -23,17 +23,17 @@ const Card = ({ item, handleDelete }) => {
         className="card shadow m-3"
         style={{ width: "100%", maxWidth: 351, height: "auto" }}
       >
-        <div className="d-flex justify-content-center w-100">
+        <div className="d-flex justify-content-center w-100 p-2">
           <img
             className="image-car"
             src={item.image ? item.image : NoImage}
             alt="car"
-            style={{ maxHeight: 300, width: "100%" }}
+            style={{ maxHeight: 300, width: "100%", objectFit: "cover" }}
           />
         </div>
         <div className="card-body" style={{ height: "auto" }}>
           <h5 className="car-name" style={{ fontSize: 14 }}>
-            {item.name}
+            {item.name ? item.name : "Nama tidak tersedia"}
           </h5>
           <strong>
             <p
@@ -43,7 +43,7 @@ const Card = ({ item, handleDelete }) => {
           </strong>
           <p className="car-category" style={{ fontSize: 14 }}>
             <FontAwesomeIcon icon={faUser} style={{ marginRight: 10 }} />{" "}
-            {item.category}
+            {item.category ? item.category : "Harga tidak tersedia"}
           </p>
           <p className="car-updated" style={{ fontSize: 14 }}>
             <FontAwesomeIcon icon={faClockFour} style={{ marginRight: 10 }} />{" "}
