@@ -23,12 +23,12 @@ const Card = ({ item, handleDelete }) => {
         className="card shadow m-3"
         style={{ width: "100%", maxWidth: 351, height: "auto" }}
       >
-        <div className="d-flex justify-content-center w-100">
+        <div className="d-flex justify-content-center w-100 p-2">
           <img
             className="image-car"
             src={item.image ? item.image : NoImage}
             alt="car"
-            style={{ maxHeight: 300, width: "100%" }}
+            style={{ maxHeight: 300, width: "100%", objectFit: "cover" }}
           />
         </div>
         <div className="card-body" style={{ height: "auto" }}>
