@@ -9,8 +9,8 @@ const tableTitleData = [
     numeric: false,
   },
   {
-    id: "CarId",
-    label: "Car ID",
+    id: "Car.name",
+    label: "Car",
     numeric: false,
   },
   {

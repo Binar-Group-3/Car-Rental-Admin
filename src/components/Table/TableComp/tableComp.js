@@ -121,7 +121,7 @@ const TableComp = () => {
                 currentPage * dataPerPage + dataPerPage
               )
               .map((item, index) => (
-                <TableRow key={item}>
+                <TableRow key={item.id}>
                   <TableCell>
                     <p>{index + 1}</p>
                   </TableCell>
@@ -129,7 +129,7 @@ const TableComp = () => {
                     <p>{item.User.email}</p>
                   </TableCell>
                   <TableCell>
-                    <p>{item.CarId}</p>
+                    <p>{item.Car?.name}</p>
                   </TableCell>
                   <TableCell>
                     <p>{moment(item.start_rent_at).format("lll")}</p>
@@ -141,7 +141,7 @@ const TableComp = () => {
                     <p>{currencyIDR.format(item.total_price)}</p>
                   </TableCell>
                   <TableCell>
-                    <p>-</p>
+                    <p>{item.Car?.category}</p>
                   </TableCell>
                 </TableRow>
               ))}
