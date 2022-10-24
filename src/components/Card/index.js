@@ -43,7 +43,7 @@ const Card = ({ item, handleDelete }) => {
           </strong>
           <p className="car-category" style={{ fontSize: 14 }}>
             <FontAwesomeIcon icon={faUser} style={{ marginRight: 10 }} />{" "}
-            {item.category ? item.category : "Harga tidak tersedia"}
+            {item.category ? item.category : "Kategori tidak tersedia"}
           </p>
           <p className="car-updated" style={{ fontSize: 14 }}>
             <FontAwesomeIcon icon={faClockFour} style={{ marginRight: 10 }} />{" "}
